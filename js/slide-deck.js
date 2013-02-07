@@ -213,6 +213,7 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
       break;
 
     case 72: // H: Toggle code highlighting
+    case 190: // 'Black screen' on Logitech remote
       document.body.classList.toggle('highlight-code');
       break;
 
@@ -225,19 +226,6 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
         document.body.classList.toggle('with-notes');
       } else if (this.controller && !this.controller.popup) {
         document.body.classList.toggle('with-notes');
-      }
-      break;
-
-    case 82: // R
-      // TODO: implement refresh on main slides when popup is refreshed.
-      break;
-
-    case 27: // ESC: Hide notes and highlighting
-      document.body.classList.remove('with-notes');
-      document.body.classList.remove('highlight-code');
-
-      if (document.body.classList.contains('overview')) {
-        this.toggleOverview();
       }
       break;
 
@@ -262,6 +250,18 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
         this.container.classList.toggle('layout-widescreen');
       }
       break;
+
+    // F5/esc toggle key on Logitech remote
+    case 27:
+    case 116:
+      // try to start video
+      var videos = this.container.getElementsByTagName('video');
+      if (videos.length) {
+        var video = videos[0];
+        video[video.paused ? "play" : "pause"]();
+      }
+      break;
+
   }
 };
 
@@ -311,10 +311,6 @@ SlideDeck.prototype.loadConfig_ = function(config) {
 
   if (settings.analytics) {
     this.loadAnalytics_();
-  }
-
-  if (settings.fonts) {
-    this.addFonts_(settings.fonts);
   }
 
   // Builds. Default to on.
@@ -409,18 +405,6 @@ SlideDeck.prototype.loadConfig_ = function(config) {
       }
     };
   }
-};
-
-/**
- * @private
- * @param {Array.<string>} fonts
- */
-SlideDeck.prototype.addFonts_ = function(fonts) {
-  var el = document.createElement('link');
-  el.rel = 'stylesheet';
-  el.href = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://fonts.googleapis.com/css?family=' + fonts.join('|') + '&v2';
-  document.querySelector('head').appendChild(el);
 };
 
 /**
