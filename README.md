@@ -15,7 +15,7 @@ Adopted from [Google's IO 2012 slides](https://code.google.com/p/io-2012-slides/
 
 To regenerate CSS files, use
 
-  compass watch
+    compass watch
 
 Open `template.html` from filesystem or local server.
 
