@@ -190,19 +190,6 @@ slides > slide {
     }
   }
 
-  /*&.title-slide {
-    &:after {
-      content: '';
-      background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
-      @include background-size(contain);
-      position: absolute;
-      bottom: $slide-top-bottom-padding;
-      right: $slide-top-bottom-padding;
-      width: 100%;
-      height: 60px;
-    }
-  }*/
-
   &.backdrop {
     z-index: -10;
     display: block !important;
@@ -922,23 +909,23 @@ aside.gdbar {
 .title-slide {
 
   hgroup {
-    bottom: 100px;
+    bottom: 150px;
 
     h1 {
-      font-size: 65px;
+      font-size: 90px;
       line-height: 1.4;
       letter-spacing: -3px;
       color: $gray-4;
     }
 
     h2 {
-      font-size: 34px;
+      font-size: 60px;
       color: $gray-2;
       font-weight: inherit;
     }
 
     p {
-      font-size: 20px;
+      font-size: 43px;
       color: $gray-3;
       line-height: 1.3;
       margin-top: 2em;
