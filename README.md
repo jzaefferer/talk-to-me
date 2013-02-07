@@ -32,4 +32,8 @@ Presenter mode is sticky, so refreshing the page will persist your settings.
 
 ## License
 
-Same as the original IO 2012 slides, licensed [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+Copyright 2013 Jörn Zaefferer
+
+Licensed [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0), same as the original IO 2012 slides.
+
+You're welcome to reuse slides and examples.
