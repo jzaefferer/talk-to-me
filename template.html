@@ -1,35 +1,19 @@
-<!--
-Adapted from: https://code.google.com/p/io-2012-slides
--->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Talk To Me - Making Websites Accessible</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" media="all" href="theme/css/default.css">
-  <!-- <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css"> -->
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="theme/css/default.css">
+  <!-- This amazingness opens all links in a new tab. -->
+  <base target="_blank">
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
 <body style="opacity: 0">
 
 <slides class="layout-widescreen">
-
-  <!-- <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo.png"></span>
-    </article>
-  </slide> -->
-
   <slide class="title-slide segue nobackground">
-    <!-- <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside> -->
-    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
@@ -37,6 +21,7 @@ Adapted from: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
+  <!-- Situation -->
   <slide class="segue">
     <aside class="note">
       <section>
@@ -56,7 +41,7 @@ Adapted from: https://code.google.com/p/io-2012-slides
         <a href="http://img.ibtimes.com/www/data/images/full/2012/03/13/247810-stephen-hawking-who-has-won-countless-honors-and-medals-for-his-work-i.jpg">source</a>
       </section>
     </aside>
-    <img src="images/stephen-hawking.jpg" alt="Description">
+    <img src="images/stephen-hawking.jpg" alt="Photo of Stephen Hawking with his wheelchair and monitor">
   </slide>
 
   <slide>
@@ -130,8 +115,18 @@ Adapted from: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article class="flexbox vcenter">
       <img src="images/source-tpg-mobile-disabilities-among-respondents.png" alt="Description">
-      <footer class="source">source: <a href="http://www.paciellogroup.com/mobile/">Mobile Accessibility Survey</a></footer>
+      <footer class="source">source: <a href="http://www.paciellogroup.com/mobile/#rsp3">Mobile Accessibility Survey</a></footer>
     </article>
+  </slide>
+
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        <p>Giesbert Nijhuis is paralyzed from the neck down due to a spinal cord injury caused by a car accident. He now designs t-shirts, CD covers, film posters and much more using a head pointer, an on-screen keyboard and his Mac.</p>
+        http://www.youtube.com/watch?v=x31u1seLTo0
+      </section>
+    </aside>
+    <video src="videos/head-designed-cut.mp4">
   </slide>
 
   <slide>
@@ -143,14 +138,135 @@ Adapted from: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide class="full nobackground">
-    <video src="videos/head-designed-cut.mp4">
+  <!-- How to convince your boss -->
+  <slide>
+    Previous two examples: Designed for people with disabilities.<br>
+    The internet: Not designed for people with disabilities.
+  </slide>
+  <slide>
+    [example of trying to use some site with a screenreader, failing]
+  </slide>
+  <slide>
+    [show the same site, now with mouse to demonstrate the difference?]
+  </slide>
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        A lot of sites have problems like that. How can we fix them? This is a complex problem, not caused by a single root issue, so we have to find a way to start solving it, then go from there. The starting point is, for lack of a better term, to convince your boss. Your situation likely varies, so you may have to convince your coworkers, your client or just yourself. But the point is the same: You have to convince someone that making websites accessible is important, just like user experience and security are important. Once we agree on the importance, we can look at testing for accessibility and fixing issues as we find them.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Convince Your Boss</h2>
+    </hgroup>
   </slide>
 
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        There’s laws to consider, these apply specifically when working on government sites.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Legal Reasons</h2>
+      <h3>Applies to government sites.</h3>
+    </hgroup>
+  </slide>
 
   <slide>
     <hgroup>
+      <h2>Legal reasons</h2>
+    </hgroup>
+    <article>
+      <ul class="build fade">
+        <li>USA: <a href="http://en.wikipedia.org/wiki/Section_508_Amendment_to_the_Rehabilitation_Act_of_1973">Section 508</a></li>
+        <li>DE: Grundgesetz, Artikel 3 Abs. 3 Satz 2: “Niemand darf wegen seiner Behinderung benachteiligt werden”. More specific: <a href="http://www.gesetze-im-internet.de/bgg/__11.html">BGG</a> Also <a href="http://de.wikipedia.org/wiki/Barrierefreie-Informationstechnik-Verordnung">BITV</a></li>
+        <li>AT: <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20004228">BGStG</a> and <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20003230">E-GovG</a></li>
+        <li>UK: <a href="http://en.wikipedia.org/wiki/PAS_78">PAS-78</a> and <a href="https://www.access8878.co.uk/getting-started-with-bs-8878.aspx">BS8878</a></li>
+        <li>More tom come in the next decades, since most states have signed the 2006 UN <a href="http://en.wikipedia.org/wiki/Convention_on_the_Rights_of_Persons_with_Disabilities">Convention on the Rights of Persons with Disabilities</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        Making web sites accessible can make a huge difference for those who benefit the most from technology. Someone who can’t leave his home benefits a lot from being able to shop online.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Commcercial Reasons</h2>
+      <h3>When you can't leave home, shopping online is so much more useful.</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        There’s an ethical side. As the Golden Rule says: “One should treat others as one would like others to treat oneself.” Imagine you have an accident and become blind yourself. Wouldn’t you want the internet to be accessible to you as well? [also, everyone gets old, which heavily increases the probablity for disabilities]
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Ethical Reasons</h2>
+      <h3>Golden Rule: “One should treat others as one would like others to treat oneself.”</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        There’s side effects: Making your site easier to use for disabled users is likely going to have an effect on everyone else as well. Keyboard support is useful for anyone who doesn’t want or can use the mouse, could be a disability or superusers.<br>
+        Working with clean markup is good for screenreaders, but also has other benefits, for SEO or preview snippets (Twitter, Facebook?).
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Semantic Reasons</h2>
+      <h3>Good markup and separation of concerns has other benefits</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        If nothing else works, go guerilla and “ask for forgiveness, not permission”: Do some testing and improvements, then show how cheap a few key improvements are.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Guerilla Approach</h2>
+      <h3>“ask for forgiveness, not permission”</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <article>
+      Now that you’ve convinced your boss, how do you know what to do next? What to test, how to fix issues? First, let’s look at some numbers:
+    </article>
+  </slide>
+
+  <slide hidden>
+    <hgroup>
+      <h2>Definitions</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li><a href="http://en.wikipedia.org/wiki/Accessibility">Accessibility</a>
+          <ul>
+            <li>Accessibility is the degree to which a product, device, service, or environment is available to as many people as possible.</li>
+          </ul>
+        </li>
+        <li><a href="http://en.wikipedia.org/wiki/Web_accessibility">Web Accessibility</a>
+          <ul>
+            <li>Refers to the inclusive practice of making websites usable by people of all abilities and disabilities.</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <!-- Testing -->
+  <slide>
+    <hgroup>
       <h2>Next: Keyboard testing</h2>
+      <h3>1. Google Search 2. Wizzair Flight Search</h3>
     </hgroup>
   </slide>
 
@@ -158,6 +274,19 @@ Adapted from: https://code.google.com/p/io-2012-slides
     <video src="videos/keyboard-testing-slower.mp4">
   </slide>
 
+  <slide class="full nobackground">
+    <video src="videos/keyboard-testing-wizzair.mp4">
+  </slide>
+
+  <slide class="full nobackground">
+    <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of wizzair site with Web Inspector open, showing the lack of href or tabindex">
+  </slide>
+
+  <!-- Implementing Basics -->
+
+  <!-- Implementing Widgets (ARIA!) -->
+
+  <!-- template references -->
   <slide class="segue dark quote nobackground" hidden>
     <article class="flexbox vleft auto-fadein">
       <q>
@@ -171,65 +300,6 @@ Adapted from: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide hidden>
-    <hgroup>
-      <h2>Slide with Bullets</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
-      </ul>
-    </article>
-  </slide>
-
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>A list where items build:</p>
-      <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
-  <slide>
     <hgroup>
       <h2>Code Slide (with Subtitle Placeholder)</h2>
       <h3>Subtitle Placeholder</h3>
@@ -250,7 +320,7 @@ Adapted from: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Code Slide (Smaller Font)</h2>
     </hgroup>
@@ -284,47 +354,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
-    </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Presenter Mode</h2>
-    </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
-    </article>
-  </slide>
-
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide with Image</h2>
     </hgroup>
@@ -334,7 +364,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide with Image (Centered horz/vert)</h2>
     </hgroup>
@@ -344,91 +374,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide Styles</h2>
     </hgroup>
@@ -461,7 +407,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
+  <slide hidden class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
       <h2>Segue Slide</h2>
@@ -469,27 +415,7 @@ function helloWorld(world) {
     </hgroup>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
-
-  <slide>
+  <slide hidden>
     <article>
       <iframe data-src="http://www.google.com/doodle4google/history.html"></iframe>
     </article>
@@ -505,12 +431,6 @@ function helloWorld(world) {
       <!-- populated from slide_config.json -->
     </p>
   </slide>
-
-  <!-- <slide class="logoslide dark nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
-    </article>
-  </slide> -->
 
   <slide class="backdrop"></slide>
 
