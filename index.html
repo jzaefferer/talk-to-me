@@ -310,6 +310,14 @@
   </slide>
 
   <slide>
+    <aside class="note">
+      <section>
+
+      </section>
+    </aside>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
     Let’s look at at a few examples:
     Testing for screeenreader accessiblity. Brief explanation, with example, of heading navigation ( http://www.youtube.com/watch?v=AmUPhEVWu_E - “screenreaders don’t read style, they only read markup” ) and virtual cursor. Google search, H to jump to sponsored links, then results, then cursor down to read description.
     how fast screenreader users set their readers: http://www.youtube.com/watch?v=92pM6hJG6Wo (first 30s)
@@ -326,6 +334,14 @@
   <!-- Implementing Basics -->
 
   <slide>
+    <aside class="note">
+      <section>
+
+      </section>
+    </aside>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
     Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
     Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
     Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
@@ -334,6 +350,14 @@
 
   <!-- Implementing Widgets (ARIA!) -->
   <slide>
+    <aside class="note">
+      <section>
+
+      </section>
+    </aside>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
     So that’s the easy stuff. What if we are working on a widget that has no representation in HTML? Isn’t that what ARIA is all about? Isn’t that kind of not working so well?
     Yep, ARIA can be pretty terrible. Back to our &gt;span> link, we can use role=”link” to tell the screenreader what we’re pretending here. It gets a little more complicated though. Generally its a good idea to use a framework that is already tested against screenreaders and makes use of the right ARIA roles and other attributes. One such framework is jQuery UI. Its no coincidence that I’m working on jQuery UI and giving this talk, since I’ve spent a good amount of time making jQuery UI widget’s accessible, including a lot of screenreader testing.
     I want to show you a few examples of using ARIA from jQuery UI, though first I want to give you a quick ARIA introduction, using a [to be defined] example.
@@ -346,6 +370,14 @@
 
   <!-- Conclusion -->
   <slide>
+    <aside class="note">
+      <section>
+
+      </section>
+    </aside>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
     We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessbility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it. Thank you for your attention.
     [show closing slide with contact information and slide links, including further resources. github.com/jzaefferer/talk-to-me readme with resources, slides on jzaefferer.github.com/talk-to-me]
   </slide>
@@ -358,6 +390,9 @@
     </article>
     <p class="auto-fadein" data-config-contact><!-- populated from slide_config.json --></p>
   </slide>
+
+
+
 
   <slide hidden>
     <hgroup>
