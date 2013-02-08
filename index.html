@@ -254,16 +254,23 @@
     </article>
   </slide>
 
-  <slide class="segue">
+  <slide>
+    <aside class="note">
+      <section>
+        Now that we have a basic idea of what people are using on the internet, how can we test our sites?
+        Start with keyboard accessibility. Its easy to check, just put away your mouse (or touchpad) and use only the keyboard. Use the Tab key to navigate your page. Try to interact with everything that is interactive, usually links and forms. If there’s something else, like a lightbox image gallery, check that: It should have cursor left/right bindings for showing the next and previous images, and escape key for closing the overlay. Look for issues like a &gt;span> that is styled like a link. It looks like a link, you could click on it, but it turns out that you can focus it with tabbing.
+      </section>
+    </aside>
     <hgroup>
       <h2>How to test?</h2>
-      <h3>Start with the keyboard</h3>
     </hgroup>
-  </slide>
-
-  <slide>
-    Now that we have a basic idea of what people are using on the internet, how can we test our sites?
-    Start with keyboard accessibility. Its easy to check, just put away your mouse (or touchpad) and use only the keyboard. Use the Tab key to navigate your page. Try to interact with everything that is interactive, usually links and forms. If there’s something else, like a lightbox image gallery, check that: It should have cursor left/right bindings for showing the next and previous images, and escape key for closing the overlay. Look for issues like a &gt;span> that is styled like a link. It looks like a link, you could click on it, but it turns out that you can focus it with tabbing.
+    <article>
+      <ul class="build fade">
+        <li>start with keyboard (no mouse)</li>
+        <li>Tab key to navigate</li>
+        <li>Try links, buttons, forms, inputs</li>
+      </ul>
+    </article>
   </slide>
 
   <slide class="full nobackground">
@@ -276,6 +283,7 @@
     </aside>
     <video src="videos/keyboard-testing-wizzair.mp4">
   </slide>
+
   <slide class="full nobackground">
     <aside class="note">
       <section>
@@ -285,7 +293,7 @@
         That’s the type of problem a screenreader user would also have to deal with, so we can eliminate a bunch of issues from that category before even testing with a screenreader. Though eventually we need to do that, too. So what should we test with, and how?
       </section>
     </aside>
-    <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of wizzair site with Web Inspector open, showing the lack of href or tabindex">
+    <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of Wizzair site with Web Inspector open, showing the lack of href or tabindex">
   </slide>
 
   <slide>
@@ -312,77 +320,208 @@
   <slide>
     <aside class="note">
       <section>
-
+        Let’s look at at a few examples:
+        Testing for screeenreader accessiblity. Brief explanation, with example, of heading navigation ( http://www.youtube.com/watch?v=AmUPhEVWu_E - “screenreaders don’t read style, they only read markup” ) and virtual cursor. Google search, H to jump to sponsored links, then results, then cursor down to read description.
+        how fast screenreader users set their readers: http://www.youtube.com/watch?v=92pM6hJG6Wo (first 30s)
+        Show iOS/VoiceOver demo: http://www.youtube.com/watch?v=c0nvdiRdehw (the part where he reads Twitter and posts a tweet)
+        For testing NVDA and JAWS, you need Windows. If you’re on Linux or OSX, using a VM works. You can even get good Windows VMs from the modern.IE project.
       </section>
     </aside>
     <hgroup>
-      <h2></h2>
+      <h2>Screenreader Testing</h2>
     </hgroup>
-    Let’s look at at a few examples:
-    Testing for screeenreader accessiblity. Brief explanation, with example, of heading navigation ( http://www.youtube.com/watch?v=AmUPhEVWu_E - “screenreaders don’t read style, they only read markup” ) and virtual cursor. Google search, H to jump to sponsored links, then results, then cursor down to read description.
-    how fast screenreader users set their readers: http://www.youtube.com/watch?v=92pM6hJG6Wo (first 30s)
-    Show iOS/VoiceOver demo: http://www.youtube.com/watch?v=c0nvdiRdehw (the part where he reads Twitter and posts a tweet)
-
-    For testing NVDA and JAWS, you need Windows. If you’re on Linux or OSX, using a VM works. You can even get good Windows VMs from the modern.IE project.
-    Once you’ve got a screenreader running, which is at most a matter of running the installer and then starting the installed application, you need to know a little bit about navigation with a screenreader. Unlike your previous keyboard accessibility testing, screenreader users don’t use the Tab key as much. Instead they use other methods of navigation. Pretty much all of those have shortcuts mapped to single keys, so for example in JAWS you press H to go to the next header. There’s another shortcut to go through links (anchors). You can also use the cursor keys to move your virtual cursor. Starting from a header, cursor down will move the virtual cursor to the next element, so for example the screenreader would then read the text of the paragraph below a header. Let’s see how that works by looking at this video of me navigating Google Search with NVDA: [video]
-
-    Now we know how to test our site ourselves, from really low effort keyboard testing to more involved screenreader testing. But how do we fix issues when we find them?
+    <article></article>
   </slide>
-
-
-
-  <!-- Implementing Basics -->
-
   <slide>
     <aside class="note">
       <section>
-
+        Once you’ve got a screenreader running, which is at most a matter of running the installer and then starting the installed application, you need to know a little bit about navigation with a screenreader. Unlike your previous keyboard accessibility testing, screenreader users don’t use the Tab key as much. Instead they use other methods of navigation. Pretty much all of those have shortcuts mapped to single keys, so for example in JAWS you press H to go to the next header. There’s another shortcut to go through links (anchors). You can also use the cursor keys to move your virtual cursor. Starting from a header, cursor down will move the virtual cursor to the next element, so for example the screenreader would then read the text of the paragraph below a header. Let’s see how that works by looking at this video of me navigating Google Search with NVDA: [video]
       </section>
     </aside>
     <hgroup>
-      <h2></h2>
+      <h2>Virtual Buffer/Cursor/Focus</h2>
     </hgroup>
-    Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
-    Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
-    Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
-    I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt=””. Don’t leave it out, since then the screenreader may end up reading the filename of the image.
+    <article></article>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        Now we know how to test our site ourselves, from really low effort keyboard testing to more involved screenreader testing. But how do we fix issues when we find them?
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Found 'em, let's fix 'em</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <!-- Implementing Basics -->
+  <slide>
+    <aside class="note">
+      <section>
+        Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Progressive Enhancement</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Proper Markup wins</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Test colors for contrast color blindness issues</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt="". Don’t leave it out, since then the screenreader may end up reading the filename of the image.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Good or empty alt</h2>
+    </hgroup>
+    <article>
+    </article>
   </slide>
 
   <!-- Implementing Widgets (ARIA!) -->
-  <slide>
+  <slide class="segue">
     <aside class="note">
       <section>
-
+        So that’s the easy stuff. What if we are working on a widget that has no representation in HTML? Isn’t that what ARIA is all about? Isn’t that kind of not working so well?
       </section>
     </aside>
     <hgroup>
-      <h2></h2>
+      <h2>Widgets!@?1</h2>
     </hgroup>
-    So that’s the easy stuff. What if we are working on a widget that has no representation in HTML? Isn’t that what ARIA is all about? Isn’t that kind of not working so well?
-    Yep, ARIA can be pretty terrible. Back to our &gt;span> link, we can use role=”link” to tell the screenreader what we’re pretending here. It gets a little more complicated though. Generally its a good idea to use a framework that is already tested against screenreaders and makes use of the right ARIA roles and other attributes. One such framework is jQuery UI. Its no coincidence that I’m working on jQuery UI and giving this talk, since I’ve spent a good amount of time making jQuery UI widget’s accessible, including a lot of screenreader testing.
-    I want to show you a few examples of using ARIA from jQuery UI, though first I want to give you a quick ARIA introduction, using a [to be defined] example.
-    [form validation example? http://www.zehe-edv.de/2008/07/19/einfaches-aria-tip-2-aria-invalid-und-role-alert/
-    follow-up: http://www.zehe-edv.de/2011/12/04/von-wai-aria-nach-html5-und-zuruck-oder-doch-nicht/ - pretty bad actually, almost no ARIA usage, except the role=”alert” element
-    more like this: http://fnagel.github.com/jQuery-Accessible-RIA/Formular/
-    uses aria-live. errors link back to inputs. Mark invalid input with aria-invalid ]
-    [jQuery UI examples: jQuery UI tooltip, menu/menubar, autocomplete, explain how ARIA is used, as in the specification (menu, tooltip) or as a hack (autocomplete live region).]
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        Yep, ARIA can be pretty terrible. Back to our &gt;span> link, we can use role=”link” to tell the screenreader what we’re pretending here. It gets a little more complicated though.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>role="link"</h2>
+    </hgroup>
+    <article>
+      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    <b>for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }</b>
+  }
+&lt;/script&gt;
+</pre>
+    </article>
+  </slide>
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        Generally its a good idea to use a framework that is already tested against screenreaders and makes use of the right ARIA roles and other attributes. One such framework is jQuery UI. Its no coincidence that I’m working on jQuery UI and giving this talk, since I’ve spent a good amount of time making jQuery UI widget’s accessible, including a lot of screenreader testing.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Use frameworks</h2>
+    </hgroup>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        I want to show you a few examples of using ARIA from jQuery UI, though first I want to give you a quick ARIA introduction, using a [to be defined] example.
+        [form validation example? http://www.zehe-edv.de/2008/07/19/einfaches-aria-tip-2-aria-invalid-und-role-alert/
+        follow-up: http://www.zehe-edv.de/2011/12/04/von-wai-aria-nach-html5-und-zuruck-oder-doch-nicht/ - pretty bad actually, almost no ARIA usage, except the role=”alert” element
+        more like this: http://fnagel.github.com/jQuery-Accessible-RIA/Formular/
+        uses aria-live. errors link back to inputs. Mark invalid input with aria-invalid ]
+      </section>
+    </aside>
+    <hgroup>
+      <h2>form validation example</h2>
+    </hgroup>
+    <article>
+      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    <b>for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }</b>
+  }
+&lt;/script&gt;
+</pre>
+    </article>
+  </slide>
+  <slide>
+    <aside class="note">
+        [jQuery UI examples: jQuery UI tooltip, menu/menubar, autocomplete, explain how ARIA is used, as in the specification (menu, tooltip) or as a hack (autocomplete live region).]
+      <section>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>jQuery UI examples</h2>
+    </hgroup>
+    <article>
+      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    <b>for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }</b>
+  }
+&lt;/script&gt;
+</pre>
+    </article>
   </slide>
 
   <!-- Conclusion -->
-  <slide>
+  <slide class="segue">
     <aside class="note">
       <section>
-
+        We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessbility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it.
       </section>
     </aside>
     <hgroup>
-      <h2></h2>
+      <h2>Conclusion</h2>
+      <h3>Tech is good. Convince the boss. Test keyboard and screenreader. Fix by hand or use frameworks. Worth it!</h3>
     </hgroup>
-    We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessbility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it. Thank you for your attention.
-    [show closing slide with contact information and slide links, including further resources. github.com/jzaefferer/talk-to-me readme with resources, slides on jzaefferer.github.com/talk-to-me]
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
+    <aside class="note">
+      <section>
+        Thank you for your attention.
+      </section>
+    </aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank You!</h2>
       <p>More information <a href="https://github.com/jzaefferer/talk-to-me">in the GitHub repository for this talk</a>.</p>
