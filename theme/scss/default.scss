@@ -5,6 +5,8 @@
 $social-tags: '#jqcon';
 $brand-small-icon-size: 30px;
 
+$font-size-base: 30px;
+
 $gray-1: #e6e6e6;
 $gray-2: #a9a9a9;
 $gray-3: #797979;
@@ -130,7 +132,7 @@ body {
 slides > slide {
   display: none;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 26px;
+  font-size: $font-size-base;
   color: $gray-3;
   //@include background(linear-gradient(white, white 85%, $gray-1));
   //background-color: white;
@@ -353,7 +355,7 @@ ul {
   position: relative;
 
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.65em;
 
     ul {
       margin-left: 2em;
@@ -587,6 +589,7 @@ slide.full {
   padding: 0;
   background: black;
   @include border-radius(0);
+  text-align: center;
 }
 video {
   width: 100%;
@@ -881,7 +884,7 @@ article.smaller {
   }
   hgroup {
     position: absolute;
-    top: 325px;
+    top: 285px;
   }
 }
 .segue.dark {
@@ -956,7 +959,7 @@ aside.gdbar {
 .title-slide {
 
   hgroup {
-    bottom: 150px;
+    top: 200px;
 
     h1 {
       font-size: 90px;

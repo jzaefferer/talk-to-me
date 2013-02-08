@@ -109,6 +109,12 @@ SlideDeck.prototype.onDomLoaded_ = function(e) {
       document.body.classList.add('popup');
     }
   }
+
+  // render number lists to individual cells
+  [].forEach.call(this.container.querySelectorAll('td[data-label]'), function( cell ) {
+    var label = cell.getAttribute('data-label');
+    cell.parentNode.innerHTML = '<td>' + label + '</td><td>' + cell.innerHTML.split(' ').join('</td><td>') + '</td>';
+  });
 };
 
 /**
