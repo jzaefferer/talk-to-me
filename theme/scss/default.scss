@@ -553,6 +553,10 @@ table {
     padding: 1em 0.5em;
   }
 
+  th.highlight {
+    color: $gray-4;
+    @include background(linear-gradient(top, $brand-yellow 40%, $brand-yellow-secondary2 80%) no-repeat);
+  }
   td.highlight {
     color: $gray-4;
     @include background(linear-gradient(top, $brand-yellow 40%, $brand-yellow-secondary2 80%) no-repeat);
@@ -893,6 +897,11 @@ article.smaller {
   }
   h3 {
     color: $gray-1;
+  }
+}
+.big {
+  h2 {
+    font-size: 92px;
   }
 }
 

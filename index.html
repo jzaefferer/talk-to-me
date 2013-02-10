@@ -44,28 +44,6 @@
     <img src="images/stephen-hawking.jpg" alt="Photo of Stephen Hawking with his wheelchair and monitor">
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>How many people with disabilities are there?</h2>
-      <h3>There's no exact answer</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>Example numbers for specific countries:</li>
-        <li>USA
-          <ul>
-            <li><a href="http://factfinder2.census.gov/bkmk/table/1.0/en/ACS/11_1YR/B18120/0100000US">~19.5 million</a> people between 18 and 64</li>
-            <li>or <a href="http://en.wikipedia.org/wiki/Disability#Demographics">~37 million</a> people from all ages</li>
-          </ul>
-        <li>Germany
-          <ul>
-            <a href="https://www.destatis.de/DE/Publikationen/Thematisch/Gesundheit/BehinderteMenschen/SchwerbehinderteKB.html">7.3 million</a>, of those 75% 55 years and older
-          </ul>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
   <slide class="segue dark quote nobackground">
     <article class="flexbox vleft auto-fadein">
       <q>
@@ -81,13 +59,42 @@
   </slide>
 
   <slide>
+    <aside class="note">
+      <section>
+        Here are some country specific numbers, ignoring children and seniors.<br>
+        Taking seniors into acccount increases the percentage significantly.<br>
+        Less developed countries also have higher rates of peoples with disabilities, though country specific numbers are hard to find.<br>
+        Therefore, some worldwide and region specific numbers...
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Example numbers for specific countries</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>USA
+          <ul>
+            <li><a href="http://factfinder2.census.gov/bkmk/table/1.0/en/ACS/11_1YR/B18120/0100000US">19.5 million</a> people between 18 and 64, 6% of the population</li>
+          </ul>
+        <li>Germany
+          <ul>
+            <li>
+              <a href="https://www.destatis.de/DE/Publikationen/Thematisch/Gesundheit/BehinderteMenschen/SchwerbehinderteKB.html">3.4 million</a> between 15 and 65, 4.1% of the population
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
     <hgroup>
       <h2>Common disabilities in million people</h2>
     </hgroup>
     <article>
       <table>
         <tr>
-          <th></th><th>World</th><th>Africa</th><th>The Americas</th><th>Eastern Mediterranean</th><th>Europe</th><th>SouthEast Asia</th><th>Western Pacific</th>
+          <th></th><th class="highlight">World</th><th>Africa</th><th>The Americas</th><th>Eastern Mediterranean</th><th>Europe</th><th>SouthEast Asia</th><th>Western Pacific</th>
         </tr>
         <tr>
           <td data-label="Low vision">272.4 22.2 26.6 18.7 27.9 82.3 94.3</td>
@@ -129,6 +136,7 @@
   </slide>
 
   <slide>
+    TODO: notes, icon and screenshot of the color identifier app
     <article>
       <q>I went outside. I looked at the sky. I heard colors such as “Horizon,” “Outer Space,” and many shades of blue and gray. I used color cues to find my pumpkin plants, by looking for the green among the brown and stone. I spent ten minutes looking at my pumpkin plants, with their leaves of green and lemon-ginger.</q>
       <footer class="source">
@@ -136,6 +144,15 @@
       </footer>
     </article>
   </slide>
+
+  <slide>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
+  </slide>
+
+  TODO: Give an overview of what's coming from here to the end.
+  Convince Your Boss, Testing, Implementing...
 
   <!-- How to convince your boss -->
   <slide>
@@ -148,7 +165,8 @@
   <slide>
     [show the same site, now with mouse to demonstrate the difference?]
   </slide>
-  <slide class="segue">
+
+  <slide class="segue big">
     <aside class="note">
       <section>
         A lot of sites have problems like that. How can we fix them? This is a complex problem, not caused by a single root issue, so we have to find a way to start solving it, then go from there. The starting point is, for lack of a better term, to convince your boss. Your situation likely varies, so you may have to convince your coworkers, your client or just yourself. But the point is the same: You have to convince someone that making websites accessible is important, just like user experience and security are important. Once we agree on the importance, we can look at testing for accessibility and fixing issues as we find them.
@@ -166,14 +184,14 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Legal Reasons</h2>
+      <h2>1. Legal Reasons</h2>
       <h3>Applies to government sites.</h3>
     </hgroup>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Legal reasons</h2>
+      <h2>1. Legal reasons</h2>
     </hgroup>
     <article>
       <ul class="build fade">
@@ -181,7 +199,7 @@
         <li>DE: Grundgesetz, Artikel 3 Abs. 3 Satz 2: “Niemand darf wegen seiner Behinderung benachteiligt werden”. More specific: <a href="http://www.gesetze-im-internet.de/bgg/__11.html">BGG</a> Also <a href="http://de.wikipedia.org/wiki/Barrierefreie-Informationstechnik-Verordnung">BITV</a></li>
         <li>AT: <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20004228">BGStG</a> and <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20003230">E-GovG</a></li>
         <li>UK: <a href="http://en.wikipedia.org/wiki/PAS_78">PAS-78</a> and <a href="https://www.access8878.co.uk/getting-started-with-bs-8878.aspx">BS8878</a></li>
-        <li>More tom come in the next decades, since most states have signed the 2006 UN <a href="http://en.wikipedia.org/wiki/Convention_on_the_Rights_of_Persons_with_Disabilities">Convention on the Rights of Persons with Disabilities</a></li>
+        <li>More to come in the next decades, since most states have signed the 2006 UN <a href="http://en.wikipedia.org/wiki/Convention_on_the_Rights_of_Persons_with_Disabilities">Convention on the Rights of Persons with Disabilities</a></li>
       </ul>
     </article>
   </slide>
@@ -193,7 +211,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Commcercial Reasons</h2>
+      <h2>2. Commcercial Reasons</h2>
       <h3>When you can't leave home, shopping online is so much more useful.</h3>
     </hgroup>
   </slide>
@@ -205,7 +223,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Ethical Reasons</h2>
+      <h2>3. Ethical Reasons</h2>
       <h3>Golden Rule: “One should treat others as one would like others to treat oneself.”</h3>
     </hgroup>
   </slide>
@@ -218,7 +236,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Semantic Reasons</h2>
+      <h2>4. Semantic Reasons</h2>
       <h3>Good markup and separation of concerns has other benefits</h3>
     </hgroup>
   </slide>
@@ -230,39 +248,134 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Guerilla Approach</h2>
-      <h3>“ask for forgiveness, not permission”</h3>
+      <h2>5. Guerilla Approach</h2>
+      <h3>Ask for forgiveness, not permission</h3>
     </hgroup>
   </slide>
 
   <!-- Testing -->
-  <slide>
-    <article>
-      Now that you’ve convinced your boss, how do you know what to do next? What to test, how to fix issues? First, let’s look at some numbers:<br>
-      TODO: Figure out what to show exactly.
-    </article>
-  </slide>
-  <slide hidden>
+  <slide class="segue big">
+    <aside class="note">
+      <section>
+        Now that we've convinced our boss, what's next? How do we figure out how to make our sites accessible? How do we find the issues we have?<br>
+        Before we start looking at actual testing, let's look at some common issues.
+      </section>
+    </aside>
     <hgroup>
-      <h2>JavaScript Enabled</h2>
+      <h2>Testing Basics</h2>
     </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/source-webaim-js-enabled.png" alt="Section of WebAIM survey showing 98% have JavaScript enabled">
-      <footer class="source">
-        source: <a href="http://webaim.org/projects/screenreadersurvey4/#javascript">WebAIM Screen Reader User Survey #4</a>
-      </footer>
-    </article>
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        Now that we have a basic idea of what people are using on the internet, how can we test our sites?
-        Start with keyboard accessibility. Its easy to check, just put away your mouse (or touchpad) and use only the keyboard. Use the Tab key to navigate your page. Try to interact with everything that is interactive, usually links and forms. If there’s something else, like a lightbox image gallery, check that: It should have cursor left/right bindings for showing the next and previous images, and escape key for closing the overlay. Look for issues like a &gt;span> that is styled like a link. It looks like a link, you could click on it, but it turns out that you can focus it with tabbing.
+        <ul>
+          <li>Flash: Rarely accessible, so one more reason to get rid of Flash</li>
+          <li>CAPTCHAs are inaccessible for a lot of people. Audio alternatives aren't helping, I'll show you why in a second.</li>
+          <li>Bad links or buttons are all too common. Example also coming up afterwards.</li>
+          <li>Images that lack an alt attributes are particulary bad for screenreader users.</li>
+          <li>The more interaction we implement in JavaScript, like using background requests to update the page, the more confusing it gets for a screenreader.
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Five Problematic items</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Flash</li>
+        <li>CAPTCHAs</li>
+        <li>Senseless links or buttons</li>
+        <li>Images with bad descriptions</li>
+        <li>Screens that change unexpectedly</li>
+      </ul>
+    </article>
+    <footer class="source">
+      source: Top 5 of most problematic/frustrating items, from <a href="http://webaim.org/projects/screenreadersurvey4/#problems">WebAIM Screen Reader User Survey #4</a>
+    </footer>
+  </slide>
+
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        Google's audio captcha. I tried solving this and failed miserably.
+      </section>
+    </aside>
+    <video src="videos/google-captcha-audio.mp4" style="width:422px;height:248px">
+  </slide>
+
+  <slide>
+    http://www.w3.org/html/wg/drafts/html/master/embedded-content-0.html#captcha-images
+    HTML spec (draft) recommends not to use CAPTCHAs, alternatives:
+    http://www.w3.org/TR/turingtest/
+    see also http://www.sitepoint.com/captcha-inaccessible-to-everyone/
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        How can we test these issues?
+        <ul>
+          <li>We have a few options. We can start with automated tools like the w3c validator</li>
+          <li>A color check can check contrast and other color related issues.</li>
+          <li>Keyboard testing is manual, but really easy to do.</li>
+          <li>Finally we need to test screenreaders</li>
+        </ul>
       </section>
     </aside>
     <hgroup>
       <h2>How to test?</h2>
+    </hgroup>
+    <article>
+      <ul class="build fade">
+        <li>Tools: Validator, Color Checker</li>
+        <li>Keyboard Testing</li>
+        <li>Screenreader Testing</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>TODO validator, to check missing alt attributes and other invalid markup</slide>
+  <slide>
+    <aside class="note">
+      <section>
+        I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt="". Don’t leave it out, since then the screenreader may end up reading the filename of the image.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>TODO Good or empty alt</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+  <slide>
+    <aside class="note">
+      <section>
+        Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
+      </section>
+    </aside>
+    <hgroup>
+      <h2>TODO Test colors for contrast and color blindness issues</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+  <slide>TODO NoCoffee, for other visual impairment issues</slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        Keyboard testing uncovers a lot of the issues screenreader users would also have to deal with, but can be done with very little effort on any site, at any time.
+        <ul>
+          <li>Just put away your mouse (or ignore your touchpad).</li>
+          <li>Use tab key for basic navigation</li>
+          <li>Try to interact with all interactive elements</li>
+        </ul>
+        Let's check out an example of that.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Keyboard Testing</h2>
     </hgroup>
     <article>
       <ul class="build fade">
@@ -287,13 +400,52 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        We can see that the button is an anchor element, without a href attribute.<br>
+        We can see that the button is an anchor ("a") element, without a href attribute.<br>
         Without the attribute, the anchor can't receive focus, as the browser doesn't consider this an interactive element.<br>
-        Adding the href or tabindex=0 and just making it a button would help.<br>
-        That’s the type of problem a screenreader user would also have to deal with, so we can eliminate a bunch of issues from that category before even testing with a screenreader. Though eventually we need to do that, too. So what should we test with, and how?
+        A screenreader user would also have to deal with this issue, so let's fix that.
       </section>
     </aside>
     <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of Wizzair site with Web Inspector open, showing the lack of href or tabindex">
+  </slide>
+
+  <!-- Implementing Basics -->
+  <slide>
+    <aside class="note">
+      <section>
+        Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>TODO Progressive Enhancement</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>TODO Proper Markup wins</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="segue big">
+    <aside class="note">
+      <section>
+        We already covered a lot of issues, using different cheap techniques.<br>
+        To make a site work for a screenreader user, we have to test with a screenreader.<br>
+        Where do we start?
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Testing Screenreaders</h2>
+    </hgroup>
   </slide>
 
   <slide>
@@ -301,7 +453,8 @@
       <section>
         You should start with NVDA+Firefox on Windows. That’s free to use, easy to install and has a pretty decent marketshare.<br>
         With a Mac available, you should enable VoiceOver in System Preferences and check with Safari (no need to install anything; no other browser works properly with VoiceOver).<br>
-        JAWS has the biggest market share, you can test the demo version for 40 minutes before having to restart your computer. In that regard, NVDA is a lot cheaper. Window-Eyes is also pretty popular, but also commercial with only a 30-minute trial before requiring a restart. Also worth mentioning is VoiceOver on iOS. Its very different from the OSX version. You should test with it especially if you’re building a mobile focused site.
+        JAWS has the biggest market share, you can test the demo version for 40 minutes before having to restart your computer. In that regard, NVDA is a lot cheaper.<br>
+        Also worth mentioning is VoiceOver on iOS. Its very different from the OSX version. You should test with it especially if you’re building a mobile focused site.
       </section>
     </aside>
     <hgroup>
@@ -309,10 +462,9 @@
     </hgroup>
     <article>
       <ul class="build fade">
-        <li>start with NVDA with Firefox on Windows</li>
+        <li>start with NVDA and Firefox on Windows</li>
         <li>on OSX, enable VoiceOver and test with Safari</li>
         <li>to be thorough, test JAWS with IE8+</li>
-        <li>to be really thorough, test Window-Eyes with IE8+</li>
       </ul>
     </article>
   </slide>
@@ -328,10 +480,15 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Screenreader Testing</h2>
+      <h2>TODO Screenreader Testing Examples</h2>
     </hgroup>
-    <article></article>
+    <article>
+      TODO: where to start? Demo first, then explain virtual cursor, then another example? Or explain virtual cursor first?
+      Also don't bother with the iOS example, since that doesn't even show a web browser. Ignore iOS or do a browser demo (needs actual iPhone, simulator doesn't work).<br>
+      How about this: Demo site that works, e.g. Google Search. Then explain virtual cursor. Then show bad example, which can be captured with previous testing methods. Then show screenreader specific issue and explain how ARIA helps solve that. Starting with ARIA basics, then jQuery UI examples and implementation.
+    </article>
   </slide>
+
   <slide>
     <aside class="note">
       <section>
@@ -339,7 +496,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Virtual Buffer/Cursor/Focus</h2>
+      <h2>TODO Explaining Virtual Cursor</h2>
     </hgroup>
     <article></article>
   </slide>
@@ -350,59 +507,9 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Found 'em, let's fix 'em</h2>
+      <h2>TODO Found 'em, let's fix 'em</h2>
     </hgroup>
     <article></article>
-  </slide>
-
-  <!-- Implementing Basics -->
-  <slide>
-    <aside class="note">
-      <section>
-        Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Progressive Enhancement</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Proper Markup wins</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Test colors for contrast color blindness issues</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt="". Don’t leave it out, since then the screenreader may end up reading the filename of the image.
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Good or empty alt</h2>
-    </hgroup>
-    <article>
-    </article>
   </slide>
 
   <!-- Implementing Widgets (ARIA!) -->
@@ -512,7 +619,7 @@
     </aside>
     <hgroup>
       <h2>Conclusion</h2>
-      <h3>Tech is good. Convince the boss. Test keyboard and screenreader. Fix by hand or use frameworks. Worth it!</h3>
+      <h3>Technology is good. Convince the boss. Test keyboard and screenreader. Fix by hand or use frameworks.</h3>
     </hgroup>
   </slide>
 
@@ -524,167 +631,10 @@
     </aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank You!</h2>
-      <p>More information <a href="https://github.com/jzaefferer/talk-to-me">in the GitHub repository for this talk</a>.</p>
+      <p>Resource links at <a href="https://github.com/jzaefferer/talk-to-me">https://github.com/jzaefferer/talk-to-me</a>.</p>
       <p>Slides at <a href="http://jzaefferer.github.com/talk-to-me/">http://jzaefferer.github.com/talk-to-me/</a>.</p>
     </article>
     <p class="auto-fadein" data-config-contact><!-- populated from slide_config.json --></p>
-  </slide>
-
-
-
-
-  <slide hidden>
-    <hgroup>
-      <h2>Definitions</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li><a href="http://en.wikipedia.org/wiki/Accessibility">Accessibility</a>
-          <ul>
-            <li>Accessibility is the degree to which a product, device, service, or environment is available to as many people as possible.</li>
-          </ul>
-        </li>
-        <li><a href="http://en.wikipedia.org/wiki/Web_accessibility">Web Accessibility</a>
-          <ul>
-            <li>Refers to the inclusive practice of making websites usable by people of all abilities and disabilities.</li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
-  <!-- template references -->
-  <slide class="segue dark quote nobackground" hidden>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
-
-  <slide hidden class="segue dark nobackground">
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide hidden>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/history.html"></iframe>
-    </article>
   </slide>
 
   <slide class="backdrop"></slide>
