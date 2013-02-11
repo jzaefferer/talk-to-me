@@ -899,6 +899,9 @@ article.smaller {
     margin-top: .7em;
     line-height: 1.5;
   }
+  h3 ~ h3 {
+    margin-top: 0;
+  }
   hgroup {
     margin-top: 220px;
   }
@@ -915,6 +918,10 @@ article.smaller {
   h2 {
     font-size: 92px;
   }
+}
+
+.strike {
+  text-decoration: line-through;
 }
 
 .thank-you-slide {
@@ -968,7 +975,7 @@ article.smaller {
 }
 
 .quote {
-  color: $gray-1;
+  color: white;
 
   .author {
     font-size: 24px;
