@@ -10,10 +10,19 @@
   <base target="_blank">
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
-<body style="opacity: 0">
+<body style="opacity: 0" class="blur-none">
 
 <slides class="layout-widescreen">
   <slide class="title-slide segue nobackground">
+    <aside class="note">
+      <section>
+        When you see this, hit the "4" key to turn on maxiumum blur.<br>
+        When ready to start, go down one by one over 3, 2, 1.<br>
+        If audience is already paying attention (speaker are announced), ask "can people in the back see the slides?"<br>
+        Then go to three, "how about now?", and so on. Don't comment on this.<br>
+        Could also add "Can you hear me well? Can you read the slides?"
+      </section>
+    </aside>
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
@@ -474,43 +483,19 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        For that, using tools like checkmycolours.com is pretty good.
+        For that, using tools like checkmycolours.com can help.<br>
+        It looks through elements on your page, takes the fore- and background color<br>
+        Then calculates these three values for each one. The sample shows you what it looks like.<br>
+        Now to some manual testing.
       </section>
     </aside>
     <article>
-      <img src="images/checkmycolours-example.png">
+      <img src="images/checkmycolours-wizzair.png">
       <footer class="source">
         source: <a href="http://www.checkmycolours.com/">Check My Colours</a>
       </footer>
     </article>
   </slide>
-
-  <slide>TODO validator, to check missing alt attributes and other invalid markup</slide>
-  <slide>
-    <aside class="note">
-      <section>
-        I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt="". Don’t leave it out, since then the screenreader may end up reading the filename of the image.
-      </section>
-    </aside>
-    <hgroup>
-      <h2>TODO Good or empty alt</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
-      </section>
-    </aside>
-    <hgroup>
-      <h2>TODO Test colors for contrast and color blindness issues</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>TODO NoCoffee, for other visual impairment issues</slide>
 
   <slide>
     <aside class="note">
@@ -540,6 +525,8 @@
     <aside class="note">
       <section>
         This video shows the Wizzair site, an airline. I'm looking for a flight, using only the keyboard.<br>
+        You can see which buttons I'm pressing at the bottom, mostly using the Tab key.<br>
+        [play video, narrate a bit]<br>
         Search works, but selecting the actual flight fails as can't focus that area (at least there's no visual focus).<br>
         So what's the issue here? Let's look at the markup of that first button.
       </section>
@@ -569,6 +556,19 @@
       <h2>TODO Progressive Enhancement</h2>
     </hgroup>
     <article>
+      <textarea class="prettyprint" data-lang="html">
+<!-- bad -->
+<span class="link">label</span>
+<a class="button">label</a>
+
+<!-- better -->
+<span class="link" `tabindex="0"`>label</span>
+<a class="button" `href="#"`>label</a>
+
+<!-- even better -->
+`<a href="/resource">`label</a>
+`<button>`label</button>
+      </textarea>
     </article>
   </slide>
 

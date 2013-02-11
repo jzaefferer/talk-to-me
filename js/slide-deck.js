@@ -3,8 +3,29 @@
  * @authors Eric Bidelman
  * @fileoverview TODO
  */
-document.cancelFullScreen = document.webkitCancelFullScreen ||
-                            document.mozCancelFullScreen;
+document.cancelFullScreen = document.webkitCancelFullScreen || document.mozCancelFullScreen;
+
+function escapeText( s ) {
+  if ( !s ) {
+    return "";
+  }
+  s = s + "";
+  // Both single quotes and double quotes (for attributes)
+  return s.replace( /['"<>&]/g, function( s ) {
+    switch( s ) {
+      case '\'':
+        return '&#039;';
+      case '"':
+        return '&quot;';
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '&':
+        return '&amp;';
+    }
+  });
+}
 
 /**
  * @constructor
@@ -269,6 +290,24 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
       }
       break;
 
+    case 49:
+    case 50:
+    case 51:
+    case 52:
+      var strength = e.keyCode - 48;
+      var strengths = {
+        1: "blur-none",
+        2: "blur-weak",
+        3: "blur-medium",
+        4: "blur-strong"
+      };
+      var classList = document.body.classList;
+      classList.remove("blur-none");
+      classList.remove("blur-weak");
+      classList.remove("blur-medium");
+      classList.remove("blur-strong");
+      classList.add( strengths[ strength ] );
+      break;
   }
 };
 
@@ -313,6 +352,17 @@ SlideDeck.prototype.loadConfig_ = function(config) {
 
   // Prettyprint. Default to on.
   if (!!!('usePrettify' in settings) || settings.usePrettify) {
+    var codeSnippets = this.container.querySelectorAll("textarea.prettyprint");
+    [].forEach.call(codeSnippets, function(snippet) {
+      var pre = document.createElement('pre'),
+        parent = snippet.parentNode;
+        console.log(escapeText(snippet.value))
+      pre.innerHTML = escapeText(snippet.value).replace( /`(.+?)`/g, "<b>$1</b>");
+      pre.classList.add('prettyprint');
+      pre.setAttribute('data-lang', snippet.getAttribute('data-lang'));
+      parent.insertBefore(pre, snippet);
+      parent.removeChild(snippet);
+    });
     prettyPrint();
   }
 

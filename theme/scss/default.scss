@@ -978,6 +978,26 @@ article.smaller {
   }
 }
 
+body {
+  @include transition(-webkit-filter 1s ease-in-out);
+}
+.blur-strong {
+  -webkit-filter: blur(21px);
+}
+.blur-medium {
+  -webkit-filter: blur(14px);
+}
+.blur-weak {
+  -webkit-filter: blur(7px);
+}
+.blur-none {
+  -webkit-filter: blur(0px);
+}
+// don't blur speaker notes
+body.with-notes {
+  -webkit-filter: none !important;
+}
+
 .quote {
   color: white;
 
