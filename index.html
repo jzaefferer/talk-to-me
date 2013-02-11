@@ -407,17 +407,13 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        Google's audio captcha. I tried solving this and failed miserably.
+        Google's audio captcha. I tried solving this and failed miserably.<br>
+        There are various CATCHA alternatives. If your site isn't as big as Google or similar, you really don't need to deal with CAPTCHAs.<br>
+        I'll have links for those alternatives for you later.<br>
+        For now, let's look at testing!
       </section>
     </aside>
     <video src="videos/google-captcha-audio.mp4" style="width:422px;height:248px"></video>
-  </slide>
-
-  <slide>
-    http://www.w3.org/html/wg/drafts/html/master/embedded-content-0.html#captcha-images
-    HTML spec (draft) recommends not to use CAPTCHAs, alternatives:
-    http://www.w3.org/TR/turingtest/
-    see also http://www.sitepoint.com/captcha-inaccessible-to-everyone/
   </slide>
 
   <slide>
@@ -441,6 +437,51 @@
         <li>Keyboard Testing</li>
         <li>Screenreader Testing</li>
       </ul>
+    </article>
+  </slide>
+
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        Using the W3C is still useful. Not to put a "W3C Validated" badge on your site, but to look for actual problems.<br>
+        Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
+        And usually those issues don't have a visual effect, but can badly mess with screenreaders.
+      </section>
+    </aside>
+    <article>
+      <img src="images/validator-wizzair-overview.png">
+      <footer class="source">
+        source: <a href="http://validator.w3.org/">W3C Markup Validation Service</a>
+      </footer>
+    </article>
+  </slide>
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
+        And usually those issues don't have a visual effect, but can badly mess with screenreaders.<br>
+        Something that you also can't see with regular visual inspection is contrast or color blindness issues.
+      </section>
+    </aside>
+    <article>
+      <img src="images/validator-wizzair-errors.png">
+      <footer class="source">
+        source: <a href="http://validator.w3.org/">W3C Markup Validation Service</a>
+      </footer>
+    </article>
+  </slide>
+
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        For that, using tools like checkmycolours.com is pretty good.
+      </section>
+    </aside>
+    <article>
+      <img src="images/checkmycolours-example.png">
+      <footer class="source">
+        source: <a href="http://www.checkmycolours.com/">Check My Colours</a>
+      </footer>
     </article>
   </slide>
 
@@ -740,8 +781,8 @@
     </aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank You!</h2>
-      <p>Resource links at <a href="https://github.com/jzaefferer/talk-to-me">https://github.com/jzaefferer/talk-to-me</a>.</p>
-      <p>Slides at <a href="http://jzaefferer.github.com/talk-to-me/">http://jzaefferer.github.com/talk-to-me/</a>.</p>
+      <p>Resource links at <a href="https://github.com/jzaefferer/talk-to-me">https://github.com/jzaefferer/talk-to-me</a></p>
+      <p>Slides at <a href="http://jzaefferer.github.com/talk-to-me/">http://jzaefferer.github.com/talk-to-me/</a></p>
     </article>
     <p class="auto-fadein" data-config-contact><!-- populated from slide_config.json --></p>
   </slide>
