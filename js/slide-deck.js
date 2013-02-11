@@ -258,10 +258,11 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
       break;
 
     // F5/esc toggle key on Logitech remote
+    // TODO add a key binding to 'stop' (go to frame 0)
     case 27:
     case 116:
       // try to start video
-      var videos = this.container.getElementsByTagName('video');
+      var videos = this.container.querySelectorAll('slide.current video');
       if (videos.length) {
         var video = videos[0];
         video[video.paused ? "play" : "pause"]();
