@@ -1296,42 +1296,43 @@ article.smaller q:before, article.smaller q:after {
 /* line 899, ../scss/default.scss */
 .segue h2 {
   font-size: 60px;
+  line-height: 50px;
 }
-/* line 902, ../scss/default.scss */
+/* line 903, ../scss/default.scss */
 .segue h3 {
   margin-top: .7em;
   line-height: 1.5;
 }
-/* line 906, ../scss/default.scss */
+/* line 907, ../scss/default.scss */
 .segue h3 ~ h3 {
   margin-top: 0;
 }
-/* line 909, ../scss/default.scss */
+/* line 910, ../scss/default.scss */
 .segue hgroup {
   margin-top: 220px;
 }
 
-/* line 914, ../scss/default.scss */
+/* line 915, ../scss/default.scss */
 .segue.dark h2 {
   color: #e6e6e6;
 }
-/* line 917, ../scss/default.scss */
+/* line 918, ../scss/default.scss */
 .segue.dark h3 {
   color: #e6e6e6;
 }
 
-/* line 922, ../scss/default.scss */
+/* line 923, ../scss/default.scss */
 .big h2 {
   font-size: 92px;
   line-height: 80px;
 }
 
-/* line 928, ../scss/default.scss */
+/* line 929, ../scss/default.scss */
 .strike {
   text-decoration: line-through;
 }
 
-/* line 932, ../scss/default.scss */
+/* line 933, ../scss/default.scss */
 .thank-you-slide {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1339,17 +1340,17 @@ article.smaller q:before, article.smaller q:after {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 937, ../scss/default.scss */
+/* line 938, ../scss/default.scss */
 .thank-you-slide h2 {
   font-size: 60px;
   color: inherit;
 }
-/* line 942, ../scss/default.scss */
+/* line 943, ../scss/default.scss */
 .thank-you-slide article > p {
   margin-top: 2em;
   font-size: 20pt;
 }
-/* line 947, ../scss/default.scss */
+/* line 948, ../scss/default.scss */
 .thank-you-slide > p {
   position: absolute;
   bottom: 80px;
@@ -1357,24 +1358,24 @@ article.smaller q:before, article.smaller q:after {
   line-height: 1.3;
 }
 
-/* line 957, ../scss/default.scss */
+/* line 958, ../scss/default.scss */
 .title-slide hgroup {
   top: 200px;
 }
-/* line 960, ../scss/default.scss */
+/* line 961, ../scss/default.scss */
 .title-slide hgroup h1 {
   font-size: 90px;
   line-height: 1.4;
   letter-spacing: -3px;
   color: #515151;
 }
-/* line 967, ../scss/default.scss */
+/* line 968, ../scss/default.scss */
 .title-slide hgroup h2 {
   font-size: 60px;
   color: darkgrey;
   font-weight: inherit;
 }
-/* line 973, ../scss/default.scss */
+/* line 974, ../scss/default.scss */
 .title-slide hgroup p {
   font-size: 43px;
   color: #797979;
@@ -1382,7 +1383,7 @@ article.smaller q:before, article.smaller q:after {
   margin-top: 2em;
 }
 
-/* line 982, ../scss/default.scss */
+/* line 983, ../scss/default.scss */
 body {
   -webkit-transition: -webkit-filter 1s ease-in-out;
   -moz-transition: -webkit-filter 1s ease-in-out;
@@ -1390,36 +1391,36 @@ body {
   transition: -webkit-filter 1s ease-in-out;
 }
 
-/* line 985, ../scss/default.scss */
+/* line 986, ../scss/default.scss */
 .blur-strong {
   -webkit-filter: blur(21px);
 }
 
-/* line 988, ../scss/default.scss */
+/* line 989, ../scss/default.scss */
 .blur-medium {
   -webkit-filter: blur(14px);
 }
 
-/* line 991, ../scss/default.scss */
+/* line 992, ../scss/default.scss */
 .blur-weak {
   -webkit-filter: blur(7px);
 }
 
-/* line 994, ../scss/default.scss */
+/* line 995, ../scss/default.scss */
 .blur-none {
   -webkit-filter: blur(0px);
 }
 
-/* line 998, ../scss/default.scss */
+/* line 999, ../scss/default.scss */
 body.with-notes {
   -webkit-filter: none !important;
 }
 
-/* line 1002, ../scss/default.scss */
+/* line 1003, ../scss/default.scss */
 .quote {
   color: white;
 }
-/* line 1005, ../scss/default.scss */
+/* line 1006, ../scss/default.scss */
 .quote .author {
   font-size: 24px;
   position: absolute;
@@ -1427,17 +1428,17 @@ body.with-notes {
   line-height: 1.4;
 }
 
-/* line 1014, ../scss/default.scss */
+/* line 1015, ../scss/default.scss */
 [data-config-contact] span {
   width: 115px;
   display: inline-block;
 }
 
-/* line 1023, ../scss/default.scss */
+/* line 1024, ../scss/default.scss */
 .overview.popup .note {
   display: none !important;
 }
-/* line 1029, ../scss/default.scss */
+/* line 1030, ../scss/default.scss */
 .overview slides slide {
   display: block;
   cursor: pointer;
@@ -1450,26 +1451,26 @@ body.with-notes {
   background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
   background-color: white;
 }
-/* line 1030, ../scss/default.scss */
+/* line 1031, ../scss/default.scss */
 .overview slides slide.backdrop {
   display: none !important;
 }
-/* line 1045, ../scss/default.scss */
+/* line 1046, ../scss/default.scss */
 .overview slides slide.far-past, .overview slides slide.past, .overview slides slide.next, .overview slides slide.far-next, .overview slides slide.far-past {
   opacity: 0.5;
   display: block;
 }
-/* line 1050, ../scss/default.scss */
+/* line 1051, ../scss/default.scss */
 .overview slides slide.current {
   opacity: 1;
 }
-/* line 1056, ../scss/default.scss */
+/* line 1057, ../scss/default.scss */
 .overview .slide-area {
   display: none;
 }
 
 @media print {
-  /* line 1063, ../scss/default.scss */
+  /* line 1064, ../scss/default.scss */
   slides slide {
     display: block !important;
     position: relative;
@@ -1494,46 +1495,46 @@ body.with-notes {
     opacity: 1 !important;
     color: #555;
   }
-  /* line 1083, ../scss/default.scss */
+  /* line 1084, ../scss/default.scss */
   slides slide.far-past, slides slide.past, slides slide.next, slides slide.far-next, slides slide.far-past, slides slide.current {
     opacity: 1 !important;
     display: block !important;
   }
-  /* line 1089, ../scss/default.scss */
+  /* line 1090, ../scss/default.scss */
   slides slide .build > * {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none;
   }
-  /* line 1094, ../scss/default.scss */
+  /* line 1095, ../scss/default.scss */
   slides slide .build .to-build,
   slides slide .build .build-fade {
     opacity: 1;
   }
-  /* line 1099, ../scss/default.scss */
+  /* line 1100, ../scss/default.scss */
   slides slide .auto-fadein {
     opacity: 1 !important;
   }
-  /* line 1103, ../scss/default.scss */
+  /* line 1104, ../scss/default.scss */
   slides slide.backdrop {
     display: none !important;
   }
-  /* line 1107, ../scss/default.scss */
+  /* line 1108, ../scss/default.scss */
   slides slide table.rows {
     border-right: 0;
   }
-  /* line 1112, ../scss/default.scss */
+  /* line 1113, ../scss/default.scss */
   slides slide[hidden] {
     display: none !important;
   }
 
-  /* line 1117, ../scss/default.scss */
+  /* line 1118, ../scss/default.scss */
   .slide-area {
     display: none;
   }
 
-  /* line 1121, ../scss/default.scss */
+  /* line 1122, ../scss/default.scss */
   .reflect {
     -webkit-box-reflect: none;
     -moz-box-reflect: none;
@@ -1542,7 +1543,7 @@ body.with-notes {
     box-reflect: none;
   }
 
-  /* line 1129, ../scss/default.scss */
+  /* line 1130, ../scss/default.scss */
   pre, code {
     font-family: monospace !important;
   }
