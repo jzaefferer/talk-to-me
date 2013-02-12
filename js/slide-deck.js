@@ -1,8 +1,3 @@
-/**
- * @authors Luke Mahe
- * @authors Eric Bidelman
- * @fileoverview TODO
- */
 document.cancelFullScreen = document.webkitCancelFullScreen || document.mozCancelFullScreen;
 
 function escapeText( s ) {

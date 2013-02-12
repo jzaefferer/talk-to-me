@@ -239,8 +239,7 @@
       <h2>Listen</h2>
     </hgroup>
     <article>
-      <audio src="videos/test.mp3" controls></audio>
-      TODO record screenreader, play back audio here
+      <audio src="videos/amazon-access-screenreader-audio-only.mp4" controls></audio>
     </article>
   </slide>
 
@@ -252,7 +251,7 @@
         This is just one example, but there are many sites like this.
       </section>
     </aside>
-    <video src="?"></video>
+    <video src="videos/amazon-access-screenreader.mp4"></video>
     TODO show same recording as above, this time with visuals
   </slide>
 
@@ -341,7 +340,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>3. Ethical Reasons</h2>
+      <h2>3. Ethical Reasons - TODO improve this arguments (ask for help)</h2>
       <h3>Golden Rule: “One should treat others as one would like others to treat oneself.”</h3>
     </hgroup>
   </slide>
@@ -405,7 +404,7 @@
         <li>CAPTCHAs</li>
         <li>Senseless links or buttons</li>
         <li>Images with bad descriptions</li>
-        <li>Screens that change unexpectedly</li>
+        <li>Screens that change unexpectedly - TODO replace this or figure out how to explain it</li>
       </ul>
     </article>
     <footer class="source">
@@ -539,7 +538,7 @@
       <section>
         We can see that the button is an anchor ("a") element, without a href attribute.<br>
         Without the attribute, the anchor can't receive focus, as the browser doesn't consider this an interactive element.<br>
-        A screenreader user would also have to deal with this issue, so let's fix that.
+        A screenreader user would also have to deal with this issue, so how can we fix that?
       </section>
     </aside>
     <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of Wizzair site with Web Inspector open, showing the lack of href or tabindex">
@@ -549,25 +548,85 @@
   <slide>
     <aside class="note">
       <section>
-        Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
+        Its really pretty trivial.<br>
+        We can add a placeholder href attribute to an anchor.<br>
+        And we can make a span focusable by adding the tabindex="0"<br>
+        Better yet though, we use an actual button element for a button, and an actual anchor for links.<br>
+        We can still layer behavior we JavaScript on top, but starting with proper markup is essential.<br>
+        Let's check out two more examples of bad markup...
       </section>
     </aside>
     <hgroup>
-      <h2>TODO Progressive Enhancement</h2>
+      <h2>Markup for links and buttons</h2>
     </hgroup>
     <article>
       <textarea class="prettyprint" data-lang="html">
         <!-- bad -->
-        <span class="link">label</span>
         <a class="button">label</a>
+        <span class="link">label</span>
 
         <!-- better -->
-        <span class="link" `tabindex="0"`>label</span>
         <a class="button" `href="#"`>label</a>
+        <span class="link" `tabindex="0"`>label</span>
 
-        <!-- even better -->
-        `<a href="/resource">`label</a>
+        <!-- good -->
         `<button>`label</button>
+        `<a href="/resource">`label</a>
+      </textarea>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        This one is from the first screenreader example I showed you.<br>
+        The product title should really be a header.<br>
+        The product image needs an alt attribute with a useful description.<br>
+        The decoration image needs an alt attribute with an empty value. That tells screenreaders to ignore this image.<br>
+        Do this whenever there is no description for an image. Don't skip out the alt attribute.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Markup for content</h2>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="html">
+        <!-- bad -->
+        <b>Samsung Galaxy SIII Mini</b>
+        <img src="images/41zZGG7gUmL._SL110_.jpg">
+        <img src="images/divider-line.gif">
+
+        <!-- good -->
+        <h2>Samsung Galaxy SIII Mini</h2>
+        <img src="images/41zZGG7gUmL._SL110_.jpg" alt="Front of Samsung Galaxy SIII Mini">
+        <img src="images/divider-line.gif" alt="">
+      </textarea>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        I found this table on another airline site. Don't do that.<br>
+        Link labels to inputs using the for-attribute. Otherwise a screenreader won't know description to read for the input. We've seen that happening on the amazon site as well.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Markup for forms</h2>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="html">
+        <!-- bad -->
+        <table>
+          <tr>
+            <td>Departing from</td>
+            <td><input name="departing"></td>
+          </tr>
+        </table>
+
+        <!-- good -->
+        <label for="departing">Departing from</label>
+        <input name="departing" id="departing">
       </textarea>
     </article>
   </slide>
