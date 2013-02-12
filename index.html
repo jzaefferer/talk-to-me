@@ -10,10 +10,19 @@
   <base target="_blank">
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
-<body style="opacity: 0">
+<body style="opacity: 0" class="blur-none">
 
 <slides class="layout-widescreen">
   <slide class="title-slide segue nobackground">
+    <aside class="note">
+      <section>
+        When you see this, hit the "4" key to turn on maxiumum blur.<br>
+        When ready to start, go down one by one over 3, 2, 1.<br>
+        If audience is already paying attention (speaker are announced), ask "can people in the back see the slides?"<br>
+        Then go to three, "how about now?", and so on. Don't comment on this.<br>
+        Could also add "Can you hear me well? Can you read the slides?"
+      </section>
+    </aside>
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
@@ -150,7 +159,7 @@
       <table>
         <tr><th>Option</th><th>Respondents</th></tr>
         <tr><td>Blind</td><td>56.33%</td></tr>
-        <tr><td>Low visoon</td><td>15.24%</td></tr>
+        <tr><td>Low vision</td><td>15.24%</td></tr>
         <tr><td>Physical/Motor</td><td>9.44%</td></tr>
         <tr><td>Hard of hearing</td><td>4.83%</td></tr>
         <tr><td>Learning Disabled/Dyslexic</td><td>4.61%</td></tr>
@@ -209,7 +218,7 @@
       <section>
         Sadly, a lot of the internet isn't accessible.<br>
         On the bright side, a lot of the existing issues are pretty easy to fix.<br>
-        Let's listen to an example of trying to use a screenreader to [TODO to what?]...
+        Let's listen to an example of trying to use a screenreader to look for something on a big e-commerce site...
       </section>
     </aside>
     <hgroup>
@@ -221,7 +230,7 @@
   <slide class="segue dark nobackground">
     <aside class="note">
       <section>
-        Pay attention and try to figure out what's going on.<br>
+        I'd like you to listen to this recording. Its the recording of browsing a website with a screenreader. Screenreaders literally read what sighted people can see on the screen. Please listen to this and try to figure out what is going on.
         [play audio]<br>
         Let's listen to that again, this time also showing the visuals.
       </section>
@@ -230,8 +239,7 @@
       <h2>Listen</h2>
     </hgroup>
     <article>
-      <audio src="?" controls></audio>
-      TODO record screenreader, play back audio here
+      <audio src="videos/amazon-access-screenreader-audio-only.mp4" controls></audio>
     </article>
   </slide>
 
@@ -239,18 +247,21 @@
     <aside class="note">
       <section>
         [play video]<br>
-        [TODO talk about the issue at hand]<br>
-        This is just one example, but there are many sites like this.
+        So, no headers. Usually headers are pretty useful for navigation.<br>
+        "edit text" is the search input here, but its not labelled, so the screenreader can't tell us the purpose of that input<br>
+        the search result page has no headers either. Instead if has a "New and used" link for each listing, which isn't particularly useful<br>
+        After pressing enter on the link, VoiceOver started reading "page has", but then just stopped. I don't know why.<br>
+        This image has no description, so VO just reads the filename.<br>
+        This site is supposed to work for screenreaders. Most regular sites are much worse.
       </section>
     </aside>
-    <video src="?"></video>
-    TODO show same recording as above, this time with visuals
+    <video src="videos/amazon-access-screenreader.mp4"></video>
   </slide>
 
   <slide class="segue big">
     <aside class="note">
       <section>
-        For the remainder of this talk, I want to show you how we can fix that.<br>
+        For the remainder of this talk, I want to show you that fixing these issues is easy, and to show you how to do that.<br>
         Before we look at testing and fixing issues, I want to provide a few ideas for, what I dub, "Convince Your Boss"
       </section>
     </aside>
@@ -332,7 +343,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>3. Ethical Reasons</h2>
+      <h2>3. Ethical Reasons - TODO improve this arguments (ask for help)</h2>
       <h3>Golden Rule: “One should treat others as one would like others to treat oneself.”</h3>
     </hgroup>
   </slide>
@@ -396,7 +407,7 @@
         <li>CAPTCHAs</li>
         <li>Senseless links or buttons</li>
         <li>Images with bad descriptions</li>
-        <li>Screens that change unexpectedly</li>
+        <li>Screens that change unexpectedly - TODO replace this or figure out how to explain it</li>
       </ul>
     </article>
     <footer class="source">
@@ -460,7 +471,7 @@
       <section>
         Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
         And usually those issues don't have a visual effect, but can badly mess with screenreaders.<br>
-        Something that you also can't see with regular visual inspection is contrast or color blindness issues.
+        To automate validation, you could use grunt-html.
       </section>
     </aside>
     <article>
@@ -471,46 +482,48 @@
     </article>
   </slide>
 
-  <slide class="full nobackground">
+  <slide>
     <aside class="note">
       <section>
-        For that, using tools like checkmycolours.com is pretty good.
+        grunt-html works with invidiual html files and works on the command line<br>
+        Its therefore really easy to use in a continous integration environment
+      </section>
+    </aside>
+    <hgroup>
+      <h2>grunt-html output</h2>
+      <h3>gruntjs plugin for html validation</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="cli">
+Running "htmllint:invalid" (htmllint) task
+"test/invalid.html":10.1-10.81: error: An "img" element must have an "alt" attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+"test/invalid.html":12.1-12.19: error: The "clear" attribute on the "br" element is obsolete. Use CSS instead.
+"test/invalid.html": info warning: The character encoding of the document was not declared.
+Warning: Task "htmllint:invalid" failed. Use --force to continue.
+      </pre>
+      <footer class="source">
+        output from <a href="https://github.com/jzaefferer/grunt-html">grunt-html plugin</a>
+      </footer>
+    </article>
+  </slide>
+
+  <slide class="full nobackground" hidden>
+    <!-- exclude for now, since checkmycolours.com has a bunch of issues, especially all the false negatives -->
+    <aside class="note">
+      <section>
+        For that, using tools like checkmycolours.com can help.<br>
+        It looks through elements on your page, takes the fore- and background color<br>
+        Then calculates these three values for each one. The sample shows you what it looks like.<br>
+        Now to some manual testing.
       </section>
     </aside>
     <article>
-      <img src="images/checkmycolours-example.png">
+      <img src="images/checkmycolours-wizzair.png">
       <footer class="source">
         source: <a href="http://www.checkmycolours.com/">Check My Colours</a>
       </footer>
     </article>
   </slide>
-
-  <slide>TODO validator, to check missing alt attributes and other invalid markup</slide>
-  <slide>
-    <aside class="note">
-      <section>
-        I’m sure you’ve heard before that you have to add alt attributes to images. That still applies, but only add text that’s actually useful. If there’s nothing useful to say and the image should be ignored by the screenreader, use alt="". Don’t leave it out, since then the screenreader may end up reading the filename of the image.
-      </section>
-    </aside>
-    <hgroup>
-      <h2>TODO Good or empty alt</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        Quick aside about colors: Good contrast is important! Tools can help with that and even check colors against common issues with color blindness ( http://www.checkmycolours.com/ ).
-      </section>
-    </aside>
-    <hgroup>
-      <h2>TODO Test colors for contrast and color blindness issues</h2>
-    </hgroup>
-    <article>
-    </article>
-  </slide>
-  <slide>TODO NoCoffee, for other visual impairment issues</slide>
 
   <slide>
     <aside class="note">
@@ -540,6 +553,8 @@
     <aside class="note">
       <section>
         This video shows the Wizzair site, an airline. I'm looking for a flight, using only the keyboard.<br>
+        You can see which buttons I'm pressing at the bottom, mostly using the Tab key.<br>
+        [play video, narrate a bit]<br>
         Search works, but selecting the actual flight fails as can't focus that area (at least there's no visual focus).<br>
         So what's the issue here? Let's look at the markup of that first button.
       </section>
@@ -552,7 +567,7 @@
       <section>
         We can see that the button is an anchor ("a") element, without a href attribute.<br>
         Without the attribute, the anchor can't receive focus, as the browser doesn't consider this an interactive element.<br>
-        A screenreader user would also have to deal with this issue, so let's fix that.
+        A screenreader user would also have to deal with this issue, so how can we fix that?
       </section>
     </aside>
     <img src="images/screenshot-wizzair-bad-button.png" alt="Screenshot of Wizzair site with Web Inspector open, showing the lack of href or tabindex">
@@ -562,26 +577,86 @@
   <slide>
     <aside class="note">
       <section>
-        Remember Progressive Enhancement? That’s still pretty useful. When you start with decent markup, you get a lof of default interactions/behavior for free. A button can be “clicked” with Enter and Space keys, a link can be clicked with the Enter key. No need for custom JS on a span element. Though if you really need to make something tabbable that isn’t already, use tabindex=”0”. The zero tells the browser to add the element inside the regular tab order. If you’re recreating a button, you need to then recreate all the native key bindings, which tends to be rather messy. jQuery doesn’t help you there, since it attempts no normalization of key events.
+        Its really pretty trivial.<br>
+        We can add a placeholder href attribute to an anchor.<br>
+        And we can make a span focusable by adding the tabindex="0"<br>
+        Better yet though, we use an actual button element for a button, and an actual anchor for links.<br>
+        We can still layer behavior we JavaScript on top, but starting with proper markup is essential.<br>
+        Let's check out two more examples of bad markup...
       </section>
     </aside>
     <hgroup>
-      <h2>TODO Progressive Enhancement</h2>
+      <h2>Markup for links and buttons</h2>
     </hgroup>
     <article>
+      <textarea class="prettyprint" data-lang="html">
+        <!-- bad -->
+        <a class="button">label</a>
+        <span class="link">label</span>
+
+        <!-- better -->
+        <a class="button" `href="#"`>label</a>
+        <span class="link" `tabindex="0"`>label</span>
+
+        <!-- good -->
+        `<button>`label</button>
+        `<a href="/resource">`label</a>
+      </textarea>
     </article>
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        Similar to using &gt;button> or &gt;a>, use the right header element for headers, then style those. Don’t just make a &gt;div> look like a header.
+        This one is from the first screenreader example I showed you.<br>
+        The product title should really be a header.<br>
+        The product image needs an alt attribute with a useful description.<br>
+        The decoration image needs an alt attribute with an empty value. That tells screenreaders to ignore this image.<br>
+        Do this whenever there is no description for an image. Don't skip out the alt attribute.
       </section>
     </aside>
     <hgroup>
-      <h2>TODO Proper Markup wins</h2>
+      <h2>Markup for content</h2>
     </hgroup>
     <article>
+      <textarea class="prettyprint" data-lang="html">
+        <!-- bad -->
+        <b>Samsung Galaxy SIII Mini</b>
+        <img src="images/41zZGG7gUmL._SL110_.jpg">
+        <img src="images/divider-line.gif">
+
+        <!-- good -->
+        `<h2>`Samsung Galaxy SIII Mini`</h2>`
+        <img src="images/41zZGG7gUmL._SL110_.jpg" `alt="Front of Samsung Galaxy SIII Mini"`>
+        <img src="images/divider-line.gif" `alt=""`>
+      </textarea>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        I found this table on another airline site. Don't do that.<br>
+        Link labels to inputs using the for-attribute. Otherwise a screenreader won't know description to read for the input. We've seen that happening on the amazon site as well.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Markup for forms</h2>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="html">
+        <!-- bad -->
+        <table>
+          <tr>
+            <td>Departing from</td>
+            <td><input name="departing"></td>
+          </tr>
+        </table>
+
+        <!-- good -->
+        <label `for="departing"`>Departing from</label>
+        <input name="departing" `id="departing"`>
+      </textarea>
     </article>
   </slide>
 

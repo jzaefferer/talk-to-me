@@ -1,10 +1,26 @@
-/**
- * @authors Luke Mahe
- * @authors Eric Bidelman
- * @fileoverview TODO
- */
-document.cancelFullScreen = document.webkitCancelFullScreen ||
-                            document.mozCancelFullScreen;
+document.cancelFullScreen = document.webkitCancelFullScreen || document.mozCancelFullScreen;
+
+function escapeText( s ) {
+  if ( !s ) {
+    return "";
+  }
+  s = s + "";
+  // Both single quotes and double quotes (for attributes)
+  return s.replace( /['"<>&]/g, function( s ) {
+    switch( s ) {
+      case '\'':
+        return '&#039;';
+      case '"':
+        return '&quot;';
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '&':
+        return '&amp;';
+    }
+  });
+}
 
 /**
  * @constructor
@@ -261,14 +277,31 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
     // TODO add a key binding to 'stop' (go to frame 0)
     case 27:
     case 116:
-      // try to start video
-      var videos = this.container.querySelectorAll('slide.current video');
-      if (videos.length) {
-        var video = videos[0];
-        video[video.paused ? "play" : "pause"]();
+      // try to start video or audio
+      var media = this.container.querySelector('slide.current').querySelector('video, audio');
+      if (media) {
+        media[media.paused ? "play" : "pause"]();
       }
       break;
 
+    case 49:
+    case 50:
+    case 51:
+    case 52:
+      var strength = e.keyCode - 48;
+      var strengths = {
+        1: "blur-none",
+        2: "blur-weak",
+        3: "blur-medium",
+        4: "blur-strong"
+      };
+      var classList = document.body.classList;
+      classList.remove("blur-none");
+      classList.remove("blur-weak");
+      classList.remove("blur-medium");
+      classList.remove("blur-strong");
+      classList.add( strengths[ strength ] );
+      break;
   }
 };
 
@@ -313,6 +346,18 @@ SlideDeck.prototype.loadConfig_ = function(config) {
 
   // Prettyprint. Default to on.
   if (!!!('usePrettify' in settings) || settings.usePrettify) {
+    var codeSnippets = this.container.querySelectorAll("textarea.prettyprint");
+    [].forEach.call(codeSnippets, function(snippet) {
+      var pre = document.createElement('pre'),
+        parent = snippet.parentNode;
+      // remove indentation, then escape, then highlight markdown-style code blocks
+      var spaces = snippet.value.split("\n")[0].replace(/^([ ]+).+/, '$1').length;
+      pre.innerHTML = escapeText(snippet.value.replace(new RegExp("^[ ]{" + spaces + "}", "mg"), '')).replace( /`(.+?)`/g, "<b>$1</b>");
+      pre.classList.add('prettyprint');
+      pre.setAttribute('data-lang', snippet.getAttribute('data-lang'));
+      parent.insertBefore(pre, snippet);
+      parent.removeChild(snippet);
+    });
     prettyPrint();
   }
 
