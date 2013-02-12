@@ -148,7 +148,7 @@
   <slide>
     <aside class="note">
       <section>
-        From a recent survey on mobile accessbility.<br>
+        From a recent survey on mobile accessibility.<br>
         Worth noting is the Physical/Motor category. I'd like to show you an example of someone with severe physical disabilities.
       </section>
     </aside>
@@ -393,8 +393,9 @@
           <li>Flash: Rarely accessible, so one more reason to get rid of Flash</li>
           <li>CAPTCHAs are inaccessible for a lot of people. Audio alternatives aren't helping, I'll show you why in a second.</li>
           <li>Bad links or buttons are all too common. Example also coming up afterwards.</li>
-          <li>Images that lack an alt attributes are particulary bad for screenreader users.</li>
-          <li>The more interaction we implement in JavaScript, like using background requests to update the page, the more confusing it gets for a screenreader.
+          <li>Images that lack an alt attributes are particulary bad for screenreader users. The screenreader ends up reading the filename, which is rarely even remotely useful.</li>
+          <li>Screenreaders annonce page loads, but they usually can't inform the user about changes on the page triggered by JavaScript. This can be very confusing to the user. But it can be fixed, too.</li>
+          <li>Before we go there, let's check an example of an audio alternative for a catcha...
         </ul>
       </section>
     </aside>
@@ -407,7 +408,7 @@
         <li>CAPTCHAs</li>
         <li>Senseless links or buttons</li>
         <li>Images with bad descriptions</li>
-        <li>Screens that change unexpectedly - TODO replace this or figure out how to explain it</li>
+        <li>Screens that change unexpectedly</li>
       </ul>
     </article>
     <footer class="source">
@@ -676,20 +677,178 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
   <slide>
     <aside class="note">
       <section>
-        You should start with NVDA+Firefox on Windows. That’s free to use, easy to install and has a pretty decent marketshare.<br>
-        With a Mac available, you should enable VoiceOver in System Preferences and check with Safari (no need to install anything; no other browser works properly with VoiceOver).<br>
+        You should start with NVDA+Firefox on Windows. That’s free to use, easy to install and has a pretty decent marketshare.
+      </section>
+    </aside>
+    TODO screenshot NVDA homepage with NVDA running in systray
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        With a Mac available, you should enable VoiceOver in System Preferences and check with Safari (no need to install anything; no other browser works properly with VoiceOver).
+      </section>
+    </aside>
+    TODO screenshot of System Preferences showing VoiceOver Enabled radio, with Safari in the background
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
         JAWS has the biggest market share, you can test the demo version for 40 minutes before having to restart your computer. In that regard, NVDA is a lot cheaper.<br>
-        Also worth mentioning is VoiceOver on iOS. Its very different from the OSX version. You should test with it especially if you’re building a mobile focused site.
+        NVDA, VoiceOver on OSX and JAWS all behave similar: They work with keyboard input and one-dimensional voice output
+      </section>
+    </aside>
+    TODO screenshot of JAWS homepage, with the JAWS window in the foreground
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+      Very different is VoiceOver on iOS, which uses the touchscreen for input, making the interaction a lot more spatial and two-dimensional.<br>
+      [show video]<br>
+      For testing VoiceOver on iPhone you need an actual device, since its not supported in the simulator.<br>
+      So for now, we focus on desktop screenreaders.
+      </section>
+    </aside>
+    TODO blind film critic excerpt to show VO on iOS
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        All desktop screenreaders have something in common, and while they use different names, I'll just call it "Virtual Cursor" for now.<br>
+        The virtual cursor is one way of navigating documents and the primary way to read text nodes.<br>
+        Its basically allows you to walk through the DOM tree, reading one element after the other.<br>
+        Let me show you a short example of using the virtual cursor.
       </section>
     </aside>
     <hgroup>
-      <h2>What screenreaders to test?</h2>
+      <h2>Virtual Cursor</h2>
+      <h3>A speaking DOM tree!</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        This test page has just a few demo elements.<br>
+        I'm using the virtual cursor to navigate from one to the other.<br>
+        As before, you can see the keys I'm using in the lower part of the video.<br>
+        [show video]<br>
+        There are other methods of navigation though...
+      </section>
+    </aside>
+    TODO short video of using VoiceOver's virtual cursor, just navigate a few text, image and form elements.
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        Instead of go strictly from one element to the next,<br>
+        screenreaders also support jumping to certain elements<br>
+        those are usually headers, links and form elements.<br>
+        Landmarks refers to regions like navigation, content, search or footer.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Headers, Links, Forms, Landmarks</h2>
+      <h3>The GOTO of screenreaders</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        The same testpage as before, though this time I'm using the [web rotor?]<br>
+        [show video]
+      </section>
+    </aside>
+    TODO short video of using VoiceOver's rotor to navigate to a header, to a link and to a landmark.
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        With those basics in place, let's go back at the list of common problems<br>
+        We'll avoid using Flash and CAPTCHAs<br>
+        We've seen how to fix bad links and buttons as well as confusing image description<br>
+        Now let's look at unexpected screen changes.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Problems solved?</h2>
     </hgroup>
     <article>
-      <ul class="build fade">
-        <li>start with NVDA and Firefox on Windows</li>
-        <li>on OSX, enable VoiceOver and test with Safari</li>
-        <li>to be thorough, test JAWS with IE8+</li>
+      <ul>
+        <li class="strike">Flash</li>
+        <li class="strike">CAPTCHAs</li>
+        <li class="strike">Senseless links or buttons</li>
+        <li class="strike">Images with bad descriptions</li>
+        <li><b>Screens that change unexpectedly</b></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        The same testpage as before, though this time I'm submitting the form<br>
+        [show video]
+        As you can see, and more importantly, hear, the confirmation wasn't announced by VoiceOver.<br>
+        Let's fix that.
+      </section>
+    </aside>
+    TODO short video of using VoiceOver's on a page that submits an "ajax" form, showing a confirmation in place, instead of loading a new page
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        We've can fix this by making the confirmation element a live region<br>
+        That is done simply by adding the aria-live attribute.<br>
+        Polite means that the screenreader should finish reading the current element, then announce the live region.<br>
+        The alternative is "assertive", indicating the notification should happen immediately.
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Using live regions to announce screen changes</h2>
+      <h3>via aria-live</h3>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="html">
+        <div `aria-live="polite"`>
+          Thank you for contacting us! We'll get back to you as soon as possible.
+        </div>
+      </textarea>
+    </article>
+
+  </slide>
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        Let's see what that looks like in action<br>
+        [show video]
+        With the live region in place, VoiceOver actually announces the change.
+      </section>
+    </aside>
+    TODO same video as before, this time with the aria-live attribute in place
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        TODO narration
+        mention complications that ARIA can have, segue into jQuery UI
+      </section>
+    </aside>
+    <hgroup>
+      <h2>WAI-ARIA</h2>
+      <h3>Web Accessibility Initiative - Accessible Rich Internet Applications</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>roles and whatnot</li>
       </ul>
     </article>
   </slide>
@@ -697,149 +856,118 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
   <slide>
     <aside class="note">
       <section>
-        Let’s look at at a few examples:
-        Testing for screeenreader accessiblity. Brief explanation, with example, of heading navigation ( http://www.youtube.com/watch?v=AmUPhEVWu_E - “screenreaders don’t read style, they only read markup” ) and virtual cursor. Google search, H to jump to sponsored links, then results, then cursor down to read description.
-        how fast screenreader users set their readers: http://www.youtube.com/watch?v=92pM6hJG6Wo (first 30s)
-        Show iOS/VoiceOver demo: http://www.youtube.com/watch?v=c0nvdiRdehw (the part where he reads Twitter and posts a tweet)
-        For testing NVDA and JAWS, you need Windows. If you’re on Linux or OSX, using a VM works. You can even get good Windows VMs from the modern.IE project.
+        TODO narration
+        quick overview how jQuery UI is relevant for accessibility<br>
+        let's look at the ARIA markup of the menu widget
       </section>
     </aside>
     <hgroup>
-      <h2>TODO Screenreader Testing Examples</h2>
+      <h2>jQuery UI</h2>
+      <h3>accessible widgets</h3>
     </hgroup>
     <article>
-      TODO: where to start? Demo first, then explain virtual cursor, then another example? Or explain virtual cursor first?
-      Also don't bother with the iOS example, since that doesn't even show a web browser. Ignore iOS or do a browser demo (needs actual iPhone, simulator doesn't work).<br>
-      How about this: Demo site that works, e.g. Google Search. Then explain virtual cursor. Then show bad example, which can be captured with previous testing methods. Then show screenreader specific issue and explain how ARIA helps solve that. Starting with ARIA basics, then jQuery UI examples and implementation.
+      <ul>
+        <li>menu, autocomplete, tooltip etc.</li>
+      </ul>
     </article>
+  </slide>
+
+  <slide>
+    screenshot of the menu, as shown on the next slide, with open nested menu
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        Once you’ve got a screenreader running, which is at most a matter of running the installer and then starting the installed application, you need to know a little bit about navigation with a screenreader. Unlike your previous keyboard accessibility testing, screenreader users don’t use the Tab key as much. Instead they use other methods of navigation. Pretty much all of those have shortcuts mapped to single keys, so for example in JAWS you press H to go to the next header. There’s another shortcut to go through links (anchors). You can also use the cursor keys to move your virtual cursor. Starting from a header, cursor down will move the virtual cursor to the next element, so for example the screenreader would then read the text of the paragraph below a header. Let’s see how that works by looking at this video of me navigating Google Search with NVDA: [video]
+        TODO narration
       </section>
     </aside>
     <hgroup>
-      <h2>TODO Explaining Virtual Cursor</h2>
+      <h2>jQuery UI Menu markup</h2>
+      <h3>slighly simplified to fit here</h3>
     </hgroup>
-    <article></article>
-  </slide>
-  <slide>
-    <aside class="note">
-      <section>
-        Now we know how to test our site ourselves, from really low effort keyboard testing to more involved screenreader testing. But how do we fix issues when we find them?
-      </section>
-    </aside>
-    <hgroup>
-      <h2>TODO Found 'em, let's fix 'em</h2>
-    </hgroup>
-    <article></article>
+    <article>
+      TODO open the nested menu
+      <textarea class="prettyprint" data-lang="html">
+        <ul `role="menu"` tabindex="0" `aria-activedescendant="ui-id-1"`>
+          <li class="ui-menu-item" `role="presentation"`>
+            <a href="#" id="ui-id-1" `role="menuitem"`>Open</a>
+          </li>
+          <li `role="presentation"`>
+            <a href="#" `aria-haspopup="true"` id="ui-id-2" `role="menuitem"`>
+              <span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span>
+              Open recent...
+            </a>
+            <ul `role="menu" aria-hidden="true" aria-expanded="false"`>
+              <li `role="presentation" aria-disabled="true"`>
+                <a href="#" id="ui-id-3" `role="menuitem"`>My first document</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </textarea>
+    </article>
   </slide>
 
-  <!-- Implementing Widgets (ARIA!) -->
   <slide class="segue">
     <aside class="note">
       <section>
-        So that’s the easy stuff. What if we are working on a widget that has no representation in HTML? Isn’t that what ARIA is all about? Isn’t that kind of not working so well?
+        Let's see what that looks like in action<br>
+        [show video]
+        TODO narration
       </section>
     </aside>
-    <hgroup>
-      <h2>Widgets!@?1</h2>
-    </hgroup>
+    TODO demo menu with VO
   </slide>
+
+  <slide>
+    screenshot of the autocomplete, as shown on the next slide, with open menu (2 results)
+  </slide>
+
   <slide>
     <aside class="note">
       <section>
-        Yep, ARIA can be pretty terrible. Back to our &gt;span> link, we can use role=”link” to tell the screenreader what we’re pretending here. It gets a little more complicated though.
+        TODO narration
       </section>
     </aside>
     <hgroup>
-      <h2>role="link"</h2>
+      <h2>jQuery UI Autocomplete Markup</h2>
+      <h3>excluding the menu</h3>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
+      <textarea class="prettyprint" data-lang="html">
+        <label for="tags">Tags: </label>
+        <input id="tags" class="ui-autocomplete-input" autocomplete="off">
+        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible">
+          2 results are available, use up and down arrow keys to navigate.
+        </span>
+      </textarea>
     </article>
   </slide>
+
   <slide class="segue">
     <aside class="note">
       <section>
-        Generally its a good idea to use a framework that is already tested against screenreaders and makes use of the right ARIA roles and other attributes. One such framework is jQuery UI. Its no coincidence that I’m working on jQuery UI and giving this talk, since I’ve spent a good amount of time making jQuery UI widget’s accessible, including a lot of screenreader testing.
+        Let's see what that looks like in action<br>
+        [show video]
+        TODO narration
       </section>
     </aside>
-    <hgroup>
-      <h2>Use frameworks</h2>
-    </hgroup>
+    TODO demo autocomplete with VO
   </slide>
+
   <slide>
-    <aside class="note">
-      <section>
-        I want to show you a few examples of using ARIA from jQuery UI, though first I want to give you a quick ARIA introduction, using a [to be defined] example.
-        [form validation example? http://www.zehe-edv.de/2008/07/19/einfaches-aria-tip-2-aria-invalid-und-role-alert/
-        follow-up: http://www.zehe-edv.de/2011/12/04/von-wai-aria-nach-html5-und-zuruck-oder-doch-nicht/ - pretty bad actually, almost no ARIA usage, except the role=”alert” element
-        more like this: http://fnagel.github.com/jQuery-Accessible-RIA/Formular/
-        uses aria-live. errors link back to inputs. Mark invalid input with aria-invalid ]
-      </section>
-    </aside>
-    <hgroup>
-      <h2>form validation example</h2>
-    </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
-  <slide>
-    <aside class="note">
-        [jQuery UI examples: jQuery UI tooltip, menu/menubar, autocomplete, explain how ARIA is used, as in the specification (menu, tooltip) or as a hack (autocomplete live region).]
-      <section>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>jQuery UI examples</h2>
-    </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
+    TODO closing note about ARIA and jQuery UI
+    e.g. what to expect from ARIA in the future
+    or what to expect from UI
+    segue into conclusion
   </slide>
 
   <!-- Conclusion -->
   <slide class="segue">
     <aside class="note">
       <section>
-        We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessbility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it.
+        We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessibility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it.
       </section>
     </aside>
     <hgroup>
