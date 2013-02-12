@@ -282,11 +282,10 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
     // TODO add a key binding to 'stop' (go to frame 0)
     case 27:
     case 116:
-      // try to start video
-      var videos = this.container.querySelectorAll('slide.current video');
-      if (videos.length) {
-        var video = videos[0];
-        video[video.paused ? "play" : "pause"]();
+      // try to start video or audio
+      var media = this.container.querySelector('slide.current').querySelector('video, audio');
+      if (media) {
+        media[media.paused ? "play" : "pause"]();
       }
       break;
 
@@ -356,8 +355,8 @@ SlideDeck.prototype.loadConfig_ = function(config) {
     [].forEach.call(codeSnippets, function(snippet) {
       var pre = document.createElement('pre'),
         parent = snippet.parentNode;
-        console.log(escapeText(snippet.value))
-      pre.innerHTML = escapeText(snippet.value).replace( /`(.+?)`/g, "<b>$1</b>");
+      // remove indentdation, then escape, then highlight markdown-style code blocks
+      pre.innerHTML = escapeText(snippet.value.replace(/^[ ]{2,}/mg, '')).replace( /`(.+?)`/g, "<b>$1</b>");
       pre.classList.add('prettyprint');
       pre.setAttribute('data-lang', snippet.getAttribute('data-lang'));
       parent.insertBefore(pre, snippet);
