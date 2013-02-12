@@ -218,7 +218,7 @@
       <section>
         Sadly, a lot of the internet isn't accessible.<br>
         On the bright side, a lot of the existing issues are pretty easy to fix.<br>
-        Let's listen to an example of trying to use a screenreader to [TODO to what?]...
+        Let's listen to an example of trying to use a screenreader to look for something on a big e-commerce site...
       </section>
     </aside>
     <hgroup>
@@ -252,7 +252,6 @@
       </section>
     </aside>
     <video src="videos/amazon-access-screenreader.mp4"></video>
-    TODO show same recording as above, this time with visuals
   </slide>
 
   <slide class="segue big">
@@ -468,7 +467,7 @@
       <section>
         Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
         And usually those issues don't have a visual effect, but can badly mess with screenreaders.<br>
-        Something that you also can't see with regular visual inspection is contrast or color blindness issues.
+        To automate validation, you could use grunt-html.
       </section>
     </aside>
     <article>
@@ -479,7 +478,33 @@
     </article>
   </slide>
 
-  <slide class="full nobackground">
+  <slide>
+    <aside class="note">
+      <section>
+        grunt-html works with invidiual html files and works on the command line<br>
+        Its therefore really easy to use in a continous integration environment
+      </section>
+    </aside>
+    <hgroup>
+      <h2>grunt-html output</h2>
+      <h3>gruntjs plugin for html validation</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="cli">
+Running "htmllint:invalid" (htmllint) task
+"test/invalid.html":10.1-10.81: error: An "img" element must have an "alt" attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+"test/invalid.html":12.1-12.19: error: The "clear" attribute on the "br" element is obsolete. Use CSS instead.
+"test/invalid.html": info warning: The character encoding of the document was not declared.
+Warning: Task "htmllint:invalid" failed. Use --force to continue.
+      </pre>
+      <footer class="source">
+        output from <a href="https://github.com/jzaefferer/grunt-html">grunt-html plugin</a>
+      </footer>
+    </article>
+  </slide>
+
+  <slide class="full nobackground" hidden>
+    <!-- exclude for now, since checkmycolours.com has a bunch of issues, especially all the false negatives -->
     <aside class="note">
       <section>
         For that, using tools like checkmycolours.com can help.<br>

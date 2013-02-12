@@ -404,12 +404,12 @@ pre {
   padding: 10px 0 10px $slide-left-right-padding;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  width: 106%;
+  width: 113%;
   background-color: $gray-1;
   left: -$slide-left-right-padding;
   position: relative;
   @include box-sizing(border-box);
-  /*overflow: hidden;*/
+  overflow: auto;
 
   &[data-lang]:after {
     content: attr(data-lang);
