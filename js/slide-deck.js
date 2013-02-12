@@ -350,8 +350,9 @@ SlideDeck.prototype.loadConfig_ = function(config) {
     [].forEach.call(codeSnippets, function(snippet) {
       var pre = document.createElement('pre'),
         parent = snippet.parentNode;
-      // remove indentdation, then escape, then highlight markdown-style code blocks
-      pre.innerHTML = escapeText(snippet.value.replace(/^[ ]{2,}/mg, '')).replace( /`(.+?)`/g, "<b>$1</b>");
+      // remove indentation, then escape, then highlight markdown-style code blocks
+      var spaces = snippet.value.split("\n")[0].replace(/^([ ]+).+/, '$1').length;
+      pre.innerHTML = escapeText(snippet.value.replace(new RegExp("^[ ]{" + spaces + "}", "mg"), '')).replace( /`(.+?)`/g, "<b>$1</b>");
       pre.classList.add('prettyprint');
       pre.setAttribute('data-lang', snippet.getAttribute('data-lang'));
       parent.insertBefore(pre, snippet);
