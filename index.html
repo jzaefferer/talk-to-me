@@ -674,35 +674,36 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </hgroup>
   </slide>
 
-  <slide>
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         You should start with NVDA+Firefox on Windows. That’s free to use, easy to install and has a pretty decent marketshare.
       </section>
     </aside>
-    TODO screenshot NVDA homepage with NVDA running in systray
+    <img src="images/screenshot-nvda-site-and-running-smaller.png" alt="Screenshoft of NVDA site and running in background">
   </slide>
 
-  <slide>
+  <slide class="full nobackground">
     <aside class="note">
       <section>
-        With a Mac available, you should enable VoiceOver in System Preferences and check with Safari (no need to install anything; no other browser works properly with VoiceOver).
+        With a Mac available, you should enable VoiceOver in System Preferences and check with Safari (no need to install anything; in theorey no other browser works properly with VoiceOver).<br>
+        VoiceOver has all the drawbacks of OS-bundled software: Only updated when you update your OS. The VoiceOver version on Snow Leopard is terrible, for example you need at least Lion for landmark support.
       </section>
     </aside>
-    TODO screenshot of System Preferences showing VoiceOver Enabled radio, with Safari in the background
+    <img src="images/screenshot-safari-voiceover.png" alt="Screenshot of Universal Access preferences pane, with Safari in the background">
   </slide>
 
-  <slide>
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         JAWS has the biggest market share, you can test the demo version for 40 minutes before having to restart your computer. In that regard, NVDA is a lot cheaper.<br>
         NVDA, VoiceOver on OSX and JAWS all behave similar: They work with keyboard input and one-dimensional voice output
       </section>
     </aside>
-    TODO screenshot of JAWS homepage, with the JAWS window in the foreground
+    <img src="images/screenshot-jaws-site-and-running.png" alt="Screenshot of JAWS site and JAWS running in the foreground">
   </slide>
 
-  <slide>
+  <slide class="full nobackground">
     <aside class="note">
       <section>
       Very different is VoiceOver on iOS, which uses the touchscreen for input, making the interaction a lot more spatial and two-dimensional.<br>
@@ -711,7 +712,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       So for now, we focus on desktop screenreaders.
       </section>
     </aside>
-    TODO blind film critic excerpt to show VO on iOS
+    <video src="videos/blind-film-critic-using-iphone.mp4"></video>
   </slide>
 
   <slide class="segue">
@@ -729,7 +730,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </hgroup>
   </slide>
 
-  <slide class="segue">
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         This test page has just a few demo elements.<br>
@@ -739,7 +740,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         There are other methods of navigation though...
       </section>
     </aside>
-    TODO short video of using VoiceOver's virtual cursor, just navigate a few text, image and form elements.
+    <video src="videos/earthquake-basic-navigation.mp4"></video>
   </slide>
 
   <slide class="segue">
@@ -757,14 +758,41 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </hgroup>
   </slide>
 
-  <slide class="segue">
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         The same testpage as before, though this time I'm using the [web rotor?]<br>
         [show video]
       </section>
     </aside>
-    TODO short video of using VoiceOver's rotor to navigate to a header, to a link and to a landmark.
+    <video src="videos/earthquake-rotor-navigation.mp4"></video>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        For headers, links and forms you just have to use regular elements<br>
+        For landmarks, you add the right role attribute for each landmark
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Specifying landmarks</h2>
+      <h3>with roles</h3>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="html">
+        <hgroup `role="banner"`>...</hgroup>
+        <main `role="main"`>
+          ...
+        </main>
+        <aside `role="complementary"`>
+          <form `role="search"`>...</form>
+          ...
+        <footer `role="contentinfo"`>
+          ...
+        </footer>
+      </textarea>
+    </article>
   </slide>
 
   <slide>
@@ -790,7 +818,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </article>
   </slide>
 
-  <slide class="segue">
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         The same testpage as before, though this time I'm submitting the form<br>
@@ -799,35 +827,75 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         Let's fix that.
       </section>
     </aside>
-    TODO short video of using VoiceOver's on a page that submits an "ajax" form, showing a confirmation in place, instead of loading a new page
+    <video src="videos/earthquake-submit-sad.mp4"></video>
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        We've can fix this by making the confirmation element a live region<br>
+        We've can fix this by making the overlay and confirmation elements live regions<br>
         That is done simply by adding the aria-live attribute.<br>
         Polite means that the screenreader should finish reading the current element, then announce the live region.<br>
-        The alternative is "assertive", indicating the notification should happen immediately.
+        The alternative is "assertive", indicating the notification should happen immediately.<br>
+        role="status" gives the element some semantic meaning<br>
+        aria-atomic="true" tells the screenreader to read all the text, not just changed text<br>
+        The JavaScript for this...
       </section>
     </aside>
     <hgroup>
       <h2>Using live regions to announce screen changes</h2>
-      <h3>via aria-live</h3>
+      <h3>via role "status", aria-live and aria-atomic</h3>
     </hgroup>
     <article>
       <textarea class="prettyprint" data-lang="html">
-        <div `aria-live="polite"`>
-          Thank you for contacting us! We'll get back to you as soon as possible.
+        <div class="overlay hidden" `aria-live="polite" role="status"`>
+          <img src="../images/ajax-loader.gif" `alt=""`>
+          <span class="status hidden"></span>
+        </div>
+        <div class="confirmation hidden" `role="status" aria-live="polite" aria-atomic="true"`>
+          <h2>Thanks for you submission!</h2>
+          <span class="status"></span>
         </div>
       </textarea>
       <footer class="source">
-        <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-live">WAI-ARIA spec for aria-live</a>
+        <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-live">WAI-ARIA spec for aria-live</a>,
+        <a href="http://juicystudio.com/article/wai-aria_live-regions_updated.php">Tutorial for using live regions</a>
       </footer>
     </article>
-
   </slide>
-  <slide class="segue">
+
+  <slide>
+    <aside class="note">
+      <section>
+        We append text to the overlay to have the screenreader read it<br>
+        Just showing an element doesn't help<br>
+        We also append text to the confirmation. Thanks to aria-atomic, the full text gets read.<br>
+
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Using live regions to announce screen changes</h2>
+      <h3>Make text changes!</h3>
+    </hgroup>
+    <article>
+      <textarea class="prettyprint" data-lang="js">
+        var form = $( this ).addClass( "submitted" );
+        form.find( ".overlay" )`.removeClass( "hidden" )`
+          .find( ".status" )`.text(` "Subscribing " + email.val() + "..." );
+        setTimeout(function() {
+          form.removeClass( "submitted" ).addClass( "confirmed" );
+          form.find( ".confirmation")`.removeClass( "hidden" )`
+            .find( ".status" )`.text(` "We'll send a mail to " + email.val() + "[...]" );
+        }, 3500);
+      </textarea>
+      <footer class="source">
+        <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-live">WAI-ARIA spec for aria-live</a>,
+        <a href="http://juicystudio.com/article/wai-aria_live-regions_updated.php">Tutorial for using live regions</a>
+      </footer>
+    </article>
+  </slide>
+
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         Let's see what that looks like in action<br>
@@ -835,14 +903,19 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         With the live region in place, VoiceOver actually announces the change.
       </section>
     </aside>
-    TODO same video as before, this time with the aria-live attribute in place
+    <video src="videos/earthquake-submit-with-live-region.mp4"></video>
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        TODO narration
-        mention complications that ARIA can have, segue into jQuery UI
+        What we've just used are attributes specified as ARIA, the Accessible Rich Internet Applications spec<br>
+        The two major aspects that ARIA consists of are roles...<br>
+        We've seen landmarks in action before, as well as role="status"<br>
+        Other roles are widget specific, we'll take a look at those soon<br>
+        ARIA also specifies varios sates and properties, usually a set of those apply per role<br>
+        As any web standard, ARIA isn't without problems, so sometimes we have to use workarounds instead of just strictly following the spec to make things work<br>
+        That's where a framework like jQuery UI can be super useful, since it implements the correct or necessary approach, and even has some leverage on fixing the bad implementations or specifications...
       </section>
     </aside>
     <hgroup>
@@ -850,13 +923,32 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <h3>Web Accessibility Initiative - Accessible Rich Internet Applications</h3>
     </hgroup>
     <article>
-      <ul>
-        <li>roles and whatnot</li>
+      <ul class="build">
+        <li>
+          roles
+          <ul>
+            <li>landmarks: banner, main, search...</li>
+            <li>text: alert, log, status...</li>
+            <li>widgets: menu, dialog, grid...</li>
+          </ul>
+        </li>
+        <li>
+          states and properties
+          <ul>
+            <li>aria-labelledby</li>
+            <li>aria-haspopup</li>
+            <li>aria-owns</li>
+            <li>...</li>
+          </ul>
+        </li>
       </ul>
+      <footer class="source">
+        WAI-ARIA specification: <a href="http://www.w3.org/TR/wai-aria/roles#role_definitions">roles</a>, <a href="http://www.w3.org/TR/wai-aria/states_and_properties#state_prop_def">states and properties</a>
+      </footer>
     </article>
   </slide>
 
-  <slide>
+  <slide class="segue">
     <aside class="note">
       <section>
         TODO narration
@@ -865,14 +957,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <hgroup>
-      <h2>jQuery UI</h2>
-      <h3>accessible widgets</h3>
+      <h2><img src="images/jQuery_UI-Logo.png" alt="jQuery UI Logo"></h2>
+      <h3>accessible widgets, interactions, theming</h3>
     </hgroup>
-    <article>
-      <ul>
-        <li>menu, autocomplete, tooltip etc.</li>
-      </ul>
-    </article>
   </slide>
 
   <slide>
@@ -912,7 +999,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </article>
   </slide>
 
-  <slide class="segue">
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         Let's see what that looks like in action<br>
@@ -948,7 +1035,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </article>
   </slide>
 
-  <slide class="segue">
+  <slide class="full nobackground">
     <aside class="note">
       <section>
         Let's see what that looks like in action<br>

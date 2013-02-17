@@ -15,13 +15,14 @@
 		<p>To use our notification service, just enter your email and physical address below. We are asking your browser for your geolocation to fill out the address field for you.</p>
 		<form>
 			<h3>Subscribe to our notification service</h3>
-			<div class="confirmation" aria-live="polite">
+			<div class="confirmation hidden" role="status" aria-live="polite" aria-atomic="true">
 				<h2>Thanks for you submission!</h2>
-				We'll send you one email to confirm your address. We hope you don't ever get any email from us afterwards.
+				<span class="status"></span>
 			</div>
 			<section>
-				<div class="overlay" aria-live="polite">
-					<img src="../images/ajax-loader.gif" alt="Loading indicator">
+				<div class="overlay hidden" aria-live="polite" role="status">
+					<img src="../images/ajax-loader.gif" alt="">
+					<span class="status hidden"></span>
 				</div>
 				<fieldset>
 					<label for="email">Email</label>
@@ -34,12 +35,10 @@
 				</fieldset>
 				<button type="submit">Get earthquake notifications</button>
 			</section>
+
 		</form>
 		<h3>Privacy</h3>
 		<p>We only use your email address to send you notifications. We only use your physical address to figure out if an earthquake is near you.</p>
-		virtual cursor: navigate a few text, image and form elements.
-		roto: navigate to a header, to a link and to a landmark.
-		page that submits an "ajax" form, showing a confirmation in place, instead of loading a new page
 	</main>
 	<aside role="complementary">
 		<form role="search">
@@ -47,15 +46,12 @@
 			<input id="search" type="search" placeholder="Search" name="search-term">
 		</form>
 		<h3>About Us</h3>
-		<p>We provide this service for free, to help prevent disasters like the one in Haiti in 2010. Of course we can't prevent the earthquakes themselves, but we try to help by notifying of impending doom.</p>
+		<p>We provide this service for free, to help prevent disasters like the one in Haiti in 2010.</p>
 		<figure>
-			<a href="../images/earthquake-full.jpg">
-				<img src="../images/earthquake-thumb.jpg" alt="Earthquake damage on Haiti">
-			</a>
-			<figcaption>Eearthquake damage on Haiti</figcaption>
+			<img src="../images/earthquake-thumb.jpg" alt="Top-down photo of urban destruction">
+			<figcaption>Earthquake damage on Haiti</figcaption>
 		</figure>
-		<p>Some other "About Us" text</p>
-		<p>Some more other "About Us" text</p>
+		<p>Of course we can't prevent the earthquakes themselves, but we try to help by notifying of impending doom.</p>
 	</aside>
 	<footer role="contentinfo">
 		This service doesn't actualy exist, please don't try to contact us.

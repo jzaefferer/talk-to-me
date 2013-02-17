@@ -44,8 +44,13 @@ $( "main form" ).on( "submit", function( event ) {
 		alert( "Please fill out both fields" );
 		return;
 	}
+
 	var form = $( this ).addClass( "submitted" );
+	form.find( ".overlay" ).removeClass( "hidden" )
+		.find( ".status" ).text( "Subscribing " + email.val() + "..." );
 	setTimeout(function() {
 		form.removeClass( "submitted" ).addClass( "confirmed" );
-	}, 2500);
+		form.find( ".confirmation").removeClass( "hidden" )
+			.find( ".status" ).text( "We'll send you one email to " + email.val() + " to confirm your address. We hope you don't ever get any email from us afterwards." );
+	}, 3500);
 });

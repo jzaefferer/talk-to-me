@@ -71,8 +71,19 @@ button:hover {
 section {
 	position: relative;
 }
+
+.hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
 .overlay {
-	display: none;
 	position: absolute;
 	background: rgba(255, 255, 255, 0.8);
 	width: 100%;
@@ -112,6 +123,7 @@ section {
 
 footer {
 	margin-top: 2em;
+	margin-right: 300px;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	color: #666;
@@ -121,7 +133,6 @@ footer {
 }
 
 .confirmation {
-	display: none;
 	max-width: 400px;
 }
 
@@ -154,5 +165,8 @@ figcaption {
 	aside {
 		position: static;
 		width: auto;
+	}
+	footer: {
+		margin-right: 0;
 	}
 }
