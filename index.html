@@ -179,7 +179,7 @@
         An example is the Color Identifier app...
       </section>
     </aside>
-    <video src="videos/head-designed-cut.mp4"></video>
+    <video src="videos/head-designed-cut.webm"></video>
     <footer class="source">source: <a href="http://www.youtube.com/watch?v=x31u1seLTo0">YouTube: Head-designed by assistiveware</a></footer>
   </slide>
 
@@ -239,7 +239,7 @@
       <h2>Listen</h2>
     </hgroup>
     <article>
-      <audio src="videos/amazon-access-screenreader-audio-only.mp4" controls></audio>
+      <audio src="videos/amazon-access-screenreader-audio-only.webm" controls></audio>
     </article>
   </slide>
 
@@ -255,7 +255,7 @@
         This site is supposed to work for screenreaders. Most regular sites are much worse.
       </section>
     </aside>
-    <video src="videos/amazon-access-screenreader.mp4"></video>
+    <video src="videos/amazon-access-screenreader.webm"></video>
   </slide>
 
   <slide class="segue big">
@@ -425,7 +425,7 @@
         For now, let's look at testing!
       </section>
     </aside>
-    <video src="videos/google-captcha-audio.mp4" style="width:422px;height:248px"></video>
+    <video src="videos/google-captcha-audio.webm" style="width:422px;height:248px"></video>
   </slide>
 
   <slide>
@@ -560,7 +560,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         So what's the issue here? Let's look at the markup of that first button.
       </section>
     </aside>
-    <video src="videos/keyboard-testing-wizzair.mp4"></video>
+    <video src="videos/keyboard-testing-wizzair.webm"></video>
   </slide>
 
   <slide class="full nobackground">
@@ -712,7 +712,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       So for now, we focus on desktop screenreaders.
       </section>
     </aside>
-    <video src="videos/blind-film-critic-using-iphone.mp4"></video>
+    <video src="videos/blind-film-critic-using-iphone.webm"></video>
   </slide>
 
   <slide class="segue">
@@ -740,7 +740,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         There are other methods of navigation though...
       </section>
     </aside>
-    <video src="videos/earthquake-basic-navigation.mp4"></video>
+    <video src="videos/earthquake-basic-navigation.webm"></video>
   </slide>
 
   <slide class="segue">
@@ -765,7 +765,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         [show video]
       </section>
     </aside>
-    <video src="videos/earthquake-rotor-navigation.mp4"></video>
+    <video src="videos/earthquake-rotor-navigation.webm"></video>
   </slide>
 
   <slide>
@@ -827,7 +827,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         Let's fix that.
       </section>
     </aside>
-    <video src="videos/earthquake-submit-sad.mp4"></video>
+    <video src="videos/earthquake-submit-sad.webm"></video>
   </slide>
 
   <slide>
@@ -903,7 +903,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         With the live region in place, VoiceOver actually announces the change.
       </section>
     </aside>
-    <video src="videos/earthquake-submit-with-live-region.mp4"></video>
+    <video src="videos/earthquake-submit-with-live-region.webm"></video>
   </slide>
 
   <slide>
@@ -951,9 +951,11 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
   <slide class="segue">
     <aside class="note">
       <section>
-        TODO narration
-        quick overview how jQuery UI is relevant for accessibility<br>
-        let's look at the ARIA markup of the menu widget
+        jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.<br>
+        Of particular interest here are all the widgets you can put on your sites that screenreader users would also use, like an input with autocompletion or a dialog.<br>
+        So far, not everything in jQuery UI is perfectly accessible, but that's the goal for us<br>
+        As examples, I want to show you two widgets that work with screenreaders.<br>
+        Let's start with the Menu widget.
       </section>
     </aside>
     <hgroup>
@@ -962,14 +964,28 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </hgroup>
   </slide>
 
-  <slide>
-    screenshot of the menu, as shown on the next slide, with open nested menu
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        This is the demo menu I want to show you...
+      </section>
+    </aside>
+    <img src="images/screenshot-jqueryui-menu.png">
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        TODO narration
+        Here's some of the markup.<br>
+        To make it readable, I've removed the class attributes that jQuery UI uses for theming.<br>
+        As you saw on the screenshot, there's two top-level items, with a nested menu under the second.<br>
+        Every element, except for the icon span, gets a role.
+        <ul>
+          <li>menu is used for the containers</li>
+          <li>menuitem for the items itself</li>
+          <li>presentation to indicate which elements don't have a meaning on their own</li>
+        </ul>
+        Let's see what that sounds like in a screenreader...
       </section>
     </aside>
     <hgroup>
@@ -977,9 +993,8 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <h3>slighly simplified to fit here</h3>
     </hgroup>
     <article>
-      TODO open the nested menu
       <textarea class="prettyprint" data-lang="html">
-        <ul `role="menu"` tabindex="0" `aria-activedescendant="ui-id-1"`>
+        <ul `role="menu"` tabindex="0" `aria-activedescendant="ui-id-3"`>
           <li class="ui-menu-item" `role="presentation"`>
             <a href="#" id="ui-id-1" `role="menuitem"`>Open</a>
           </li>
@@ -988,8 +1003,8 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
               <span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span>
               Open recent...
             </a>
-            <ul `role="menu" aria-hidden="true" aria-expanded="false"`>
-              <li `role="presentation" aria-disabled="true"`>
+            <ul `role="menu" aria-expanded="true"`>
+              <li `role="presentation"`>
                 <a href="#" id="ui-id-3" `role="menuitem"`>My first document</a>
               </li>
             </ul>
@@ -1004,20 +1019,30 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <section>
         Let's see what that looks like in action<br>
         [show video]
-        TODO narration
+        For some reason the "right arrow" isn't shown, though I pressed it to open the submenu<br>
+        (if anyone notices that VO doesn't announce "has popup": VO bug, works fine in NVDA?)<br>
+        Let's look at the autocomplete widget as the second example...
       </section>
     </aside>
-    TODO demo menu with VO
+    <video src="videos/jqueryui-menu.mp4"></video>
   </slide>
 
-  <slide>
-    screenshot of the autocomplete, as shown on the next slide, with open menu (2 results)
+  <slide class="full nobackground">
+    <aside class="note">
+      <section>
+        This is what we're going to look at...
+      </section>
+    </aside>
+    <img src="images/screenshot-jqueryui-autocomplete.png">
   </slide>
 
   <slide>
     <aside class="note">
       <section>
-        TODO narration
+        The markup here, excluding the menu, is pretty simple.<br>
+        Autocomplete uses a live region to make it useful for screenreader users<br>
+        This isn't what the spec says, but it works well, unlike the specified approach.<br>
+        Let's listen to VoiceOver reading it...
       </section>
     </aside>
     <hgroup>
@@ -1028,7 +1053,7 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <textarea class="prettyprint" data-lang="html">
         <label for="tags">Tags: </label>
         <input id="tags" class="ui-autocomplete-input" autocomplete="off">
-        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible">
+        <span `role="status" aria-live="polite" class="ui-helper-hidden-accessible"`>
           2 results are available, use up and down arrow keys to navigate.
         </span>
       </textarea>
@@ -1040,24 +1065,51 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <section>
         Let's see what that looks like in action<br>
         [show video]
-        TODO narration
+        You can seem me typing a "j", then an "a".<br>
+        Then, as suggested, I use the cursor keys to navigate the results.<br>
+        <!-- forgot to type something invalid, would read "No results available" :/ -->
       </section>
     </aside>
-    TODO demo autocomplete with VO
+    <video src="videos/jqueryui-autocomplete.webm"></video>
   </slide>
 
-  <slide>
-    TODO closing note about ARIA and jQuery UI
-    e.g. what to expect from ARIA in the future
-    or what to expect from UI
-    segue into conclusion
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        jQuery UI isn't done yet, nor is ARIA fully implemented anywhere<br>
+        Both have room for improvements<br>
+        The jQuery Foundation is a member of the W3C and influences standards<br>
+        If you are interested in that...<br>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Future of ARIA and jQuery UI</h2>
+      <h3>more coverage and alignment</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue">
+    <aside class="note">
+      <section>
+        Support jQuery UI and the jQuery Foundation<br>
+        To recap...
+      </section>
+    </aside>
+    <hgroup>
+      <h2><img src="images/jQuery-Foundation-Logo.png" alt="jQuery Foundation Logo"></h2>
+      <h3>Support the jQuery Foundation at <a href="http://jquery.org/">jquery.org</a></h3>
+    </hgroup>
   </slide>
 
   <!-- Conclusion -->
   <slide class="segue">
     <aside class="note">
       <section>
-        We know that there are people with disabilities benefiting from technology. We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessibility. We’ve seen how to test basic keyboard access as well as screenreaders. We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible. I hope I could convince you that making web sites accessible is worth it.
+        We know that there are people with disabilities benefiting from technology.<br>
+        We’ve gathered arguments for convincing our bosses, clients and coworkers to value web accessibility.<br>
+        We’ve seen how to test basic keyboard access as well as screenreaders.<br>
+        We’ve looked at solutions for fixing the problems we find, by hand or using frameworks that are already accessible.<br>
+        I hope I could convince you that making web sites accessible is worth it.
       </section>
     </aside>
     <hgroup>
@@ -1079,6 +1131,21 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </article>
     <p class="auto-fadein" data-config-contact><!-- populated from slide_config.json --></p>
   </slide>
+
+  <slide hidden class="stats">
+    <hgroup>
+      <h2>Bonus Slide: Stats!</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li><span class="number-of-slides">61</span> slides</li>
+        <li><span class="loc-html">1162</span> lines of html</li>
+        <li><span class="videos-mb">35</span> mb of WebM videos</li>
+        <li>Custom Chromium build to get proper fullscreen support, with videos in WebM since Chromium doesn't play back H264. Big thanks to <a href="https://twitter.com/jaffathecake">Jake Archibald</a>.</li>
+      </ul>
+    </article>
+  </slide>
+
 
   <slide class="backdrop"></slide>
 

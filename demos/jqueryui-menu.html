@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery UI Menu</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../images/favicon.ico">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css">
+	<style>
+	body {
+		font-size: 62.5%;
+	}
+	.ui-menu {
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="#">Open</a>
+		</li>
+		<li>
+			<a href="#">Open recent...</a>
+			<ul>
+				<li>
+					<a href="#">My first document</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	<script>
+	$( "ul" ).menu();
+	</script>
+</body>
