@@ -277,7 +277,10 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
     // TODO add a key binding to 'stop' (go to frame 0)
     case 27:
     case 116:
-      // try to start video or audio
+      // try to start video or audio, if not in popup
+      if (this.controller.isPopup) {
+        return;
+      }
       var media = this.container.querySelector('slide.current').querySelector('video, audio');
       if (media) {
         media[media.paused ? "play" : "pause"]();
