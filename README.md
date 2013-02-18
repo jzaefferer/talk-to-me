@@ -19,6 +19,8 @@ To regenerate CSS files, use
 
 Open `template.html` from filesystem or local server.
 
+The slides use a lot of modern web features and embed video and audio. Firefox has issues with the codecs. It works fine in latest stable Chrome.
+
 ### Presenter mode
 
 The slides contain a presenter mode feature to view + control the slides

@@ -288,6 +288,10 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
     case 50:
     case 51:
     case 52:
+      // don't mess with browser shortcuts for changing tabs
+      if (e.metaKey) {
+        return;
+      }
       var strength = e.keyCode - 48;
       var strengths = {
         1: "blur-none",
@@ -738,8 +742,7 @@ SlideDeck.prototype.updateHash_ = function(dontPush) {
     }
 
     // Record GA hit on this slide.
-    window['_gaq'] && window['_gaq'].push(['_trackPageview',
-                                          document.location.href]);
+    window['_gaq'] && window['_gaq'].push(['_trackPageview', document.location.href]);
   }
 };
 

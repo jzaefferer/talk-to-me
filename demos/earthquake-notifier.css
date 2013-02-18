@@ -1,0 +1,172 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+
+hgroup {
+	background: #333;
+	padding: 1em;
+	color: white;
+}
+h1 {
+	font-size: 3em;
+}
+h1, h2, h3 {
+	margin: 0 0 .4em 0;
+}
+
+main {
+	display: block;
+	padding: 1em;
+	padding-right: 4em;
+	margin-right: 300px;
+}
+
+main form {
+	border: 1px solid #eee;
+	padding: 16px;
+	width: auto;
+	display: inline-block;
+	margin: 1em 0;
+}
+fieldset {
+	border: 0;
+	padding: 0;
+	margin-bottom: 1em;
+}
+main input {
+	border: 1px solid #999;
+	border-radius: 6px;
+	padding: 6px;
+	width: 220px;
+}
+main label {
+	display: inline-block;
+	width: 64px;
+}
+button {
+	padding: 14px 19px;
+	font-size: 1.2em;
+	color: #fff;
+	border: 0;
+	border-radius: 6px;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #006dcc;
+	background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+	background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+	background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+	background-repeat: repeat-x;
+}
+button:hover {
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+	color: #fff;
+	text-shadow: 0 0 10px rgba(255,255,255,.25);
+	text-decoration: none;
+	background-position: 0 -15px;
+	background-color: #0044cc;
+}
+
+section {
+	position: relative;
+}
+
+.hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	left: -10px;
+	top: -10px;
+	padding: 10px;
+}
+.overlay img {
+	position: absolute;
+	width: 66px;
+	height: 66px;
+	left: 50%;
+	top: 50%;
+	margin-left: -33px;
+	margin-top: -33px;
+}
+.submitted fieldset, .submitted button {
+	-webkit-filter: blur(7px);
+}
+.submitted .overlay {
+	display: block;
+}
+.confirmed h3, .confirmed section {
+	display: none;
+}
+.confirmed .confirmation {
+	display: block;
+}
+
+.note {
+	font-size: .7em;
+	display: block;
+	padding-top: .5em;
+}
+
+footer {
+	margin-top: 2em;
+	margin-right: 300px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: #666;
+	padding: 1em;
+	font-size: .8em;
+	text-align: center;
+}
+
+.confirmation {
+	max-width: 400px;
+}
+
+
+aside {
+	width: 300px;
+	position: absolute;
+	right: 0;
+	top: 162px;
+	background: #eee;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+figure {
+	margin: 0;
+}
+
+figcaption {
+	color: #666;
+	font-size: .8em;
+}
+
+@media all and (max-width: 700px) {
+	main {
+		display: block;
+		padding: 1em;
+		margin: 0;
+	}
+	aside {
+		position: static;
+		width: auto;
+	}
+	footer: {
+		margin-right: 0;
+	}
+}
