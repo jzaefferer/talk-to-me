@@ -1060,11 +1060,11 @@ article.smaller q:before, article.smaller q:after {
 /* line 748, ../scss/default.scss */
 .with-notes.popup slides.layout-widescreen slide .note,
 .with-notes.popup slides.layout-faux-widescreen slide .note {
-  -webkit-transform: translate3d(300px, 800px, 0) scale(1.5);
-  -moz-transform: translate3d(300px, 800px, 0) scale(1.5);
-  -ms-transform: translate3d(300px, 800px, 0) scale(1.5);
-  -o-transform: translate3d(300px, 800px, 0) scale(1.5);
-  transform: translate3d(300px, 800px, 0) scale(1.5);
+  -webkit-transform: translate3d(285px, 765px, 0) scale(1.5);
+  -moz-transform: translate3d(285px, 765px, 0) scale(1.5);
+  -ms-transform: translate3d(285px, 765px, 0) scale(1.5);
+  -o-transform: translate3d(285px, 765px, 0) scale(1.5);
+  transform: translate3d(285px, 765px, 0) scale(1.5);
 }
 /* line 754, ../scss/default.scss */
 .with-notes.popup slide {
@@ -1115,8 +1115,8 @@ article.smaller q:before, article.smaller q:after {
 }
 /* line 782, ../scss/default.scss */
 .with-notes.popup .note {
-  width: 109%;
-  height: 260px;
+  width: 112%;
+  height: 310px;
   background: #e6e6e6;
   padding: 0;
   -webkit-box-shadow: 0 0 10px #797979;

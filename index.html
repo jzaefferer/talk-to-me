@@ -49,14 +49,11 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        <ul>
-          <li>This is Professor Stephen Hawking, probably the most famous person with a very severe disability.</li>
-          <li>He is a highly accomplished scientist with a motor neurone disease.</li>
-          <li>He's almost completely paralyzed, yet still gives lectures and writes books</li>
-          <li>He communicates through a speech generating device, with movements of his cheek muscle.</li>
-        </ul>
-        Hawking could be considered an exception.<br>
-        But how many other people are there with disabilities? Let's look at some worldwide numbers...
+        This is Professor Stephen Hawking, probably the most famous person with a very severe disability.<br>
+        He is a highly accomplished scientist with a motor neurone disease.<br>
+        He's almost completely paralyzed, yet still gives lectures and writes books<br>
+        He communicates through a speech generating device, with movements of his cheek muscle.<br>
+        Hawking could be considered an exception, but how many other people are there with disabilities? Let's look at some worldwide numbers...
       </section>
     </aside>
     <img src="images/stephen-hawking.jpg" alt="Photo of Stephen Hawking with his wheelchair and monitor">
@@ -70,7 +67,7 @@
       <section>
         Here are estimates by the World Health Organization.<br>
         15% of the world's population is living with some form of disability.<br>
-        Between 2.2% and 3.8% have significant difficulties in functioning<br>
+        A smaller percentage has significant difficulties in functioning, for example they depend on care from others<br>
         These are estimates of worldwide numbers, let's look at some more precise country specific numbers:
       </section>
     </aside>
@@ -90,15 +87,15 @@
   <slide>
     <aside class="note">
       <section>
-        According to the US census, not counting childrens and seniors, there's almost 20 million people in the US with disabilities. That's 6% of the population.
-        According to the german census bureau, again not counting children and seniors, there's 3.4 million people with disabilities, 4.1% of the population in Germany.
-        Once you take seniors into account, the numbers are a lot higher though.
+        According to the US census, not counting childrens and seniors, there's almost 20 million people in the US with disabilities. That's 6% of the population.<br>
+        According to the german census bureau, again not counting children and seniors, there's 3.4 million people with disabilities, 4.1% of the population in Germany.<br>
+        Once we take seniors into account, the numbers are a lot higher though.<br>
         Less developed countries also have higher rates of peoples with disabilities, though country specific numbers are hard to find.<br>
         Therefore, some worldwide and region specific numbers for particular disabilities:
       </section>
     </aside>
     <hgroup>
-      <h2>Blind people in the USA and Germany</h2>
+      <h2>People with disabilities in the USA and Germany</h2>
     </hgroup>
     <article>
       <ul class="build">
@@ -165,7 +162,7 @@
         From a recent survey on mobile accessibility.<br>
         Of the 816 people that responded, 56% are blind.<br>
         In other words, if you are interested in mobile accessibility as a user, blindness is the most common issue.<br>
-        The second highest percentage is Low vision with 15%. These could be people who can see, but also use a screenreader to assist them<br>
+        The second highest percentage is Low vision with 15%. These can be people who can see, but also use assistive technlogoy<br>
         Also worth noting is the Physical/Motor category, with 9.44%.<br>
         I'd like to show you an example of someone with severe physical disabilities.
       </section>
@@ -191,10 +188,10 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        <p>The person in this video is <strong>paralyzed from the neck down due to a spinal cord injury caused by a car accident</strong>. He now works as designer from home, using a head pointer, an on-screen keyboard.</p>
+        The person in this video is <b>paralyzed from the neck down due to a spinal cord injury caused by a car accident</b>. He now works as designer from home, using a head pointer, an on-screen keyboard.<br>
         [show video]<br>
-        His wheelchair still involves a lot of specialised technology. But there's also plenty of regular tech and software available with very reasonable investments.<br>
-        An example is the Color Identifier app...
+        His wheelchair involves a lot of technology specifically designed for him and probably was somewhat expensive. But there is also plenty of technology available that is designed for people with disabilities, but quite affordable.<br>
+        One example is the Color Identifier app...
       </section>
     </aside>
     <video src="videos/head-designed-cut.webm"></video>
@@ -204,8 +201,9 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        This app uses the iPhone's camera to read the color it sees, by just pointing the iPhone at something.<br>
-        Austin Seraphin blogged about his experience using this app...
+        This app uses the iPhone's camera to read the color it sees<br>
+        It works by pointing the iPhone at something, and every 3 seconds, the app will read the color it sees through the camera.<br>
+        The blind blogger Austin Seraphin wrote about his experience using the app...
       </section>
     </aside>
     <article>
@@ -219,6 +217,8 @@
   <slide class="segue dark quote nobackground">
     <aside class="note">
       <section>
+        [read out aloud?]
+        The full blog entry is even more inspiring<br>
         Austin is blind since birth, so this was the first time he could experience colors for himself.<br>
         Its also easy to imagine how this would be very useful for someone with Achromatopsia, a type of color blindness where the person sees only a mix of gray and brown.<br>
         There are many more examples like this, but the greatest invention of our time is severely lacking...
@@ -261,7 +261,7 @@
       <h2>Listen</h2>
     </hgroup>
     <article>
-      <audio src="videos/amazon-access-screenreader-audio-only.webm" controls></audio>
+      <audio src="videos/amazon-access-screenreader-cut-audio.webm" controls></audio>
     </article>
   </slide>
 
@@ -276,7 +276,7 @@
         This site is supposed to work for screenreaders. Most regular sites are much worse.
       </section>
     </aside>
-    <video src="videos/amazon-access-screenreader.webm"></video>
+    <video src="videos/amazon-access-screenreader-cut.webm"></video>
   </slide>
 
   <slide class="segue big">
@@ -297,7 +297,7 @@
   <slide class="segue big">
     <aside class="note">
       <section>
-        Your situation likely varies, so you may have to convince your coworkers, your client or just yourself.<br>
+        Your situation is likely different, so you may have to convince your coworkers, your client or just yourself.<br>
         But the point is the same: You have to convince someone that making websites accessible is important, just like user experience and security are important.<br>
         Here are my ideas for convincing your boss...
       </section>
@@ -460,7 +460,7 @@
         How can we test these issues?
         <ul>
           <li>We have a few options. We can start with automated tools like the w3c validator</li>
-          <li>A color check can check contrast and other color related issues.</li>
+          <!-- <li>A color check can check contrast and other color related issues.</li> -->
           <li>Keyboard testing is manual, but really easy to do.</li>
           <li>Finally we need to test screenreaders</li>
         </ul>
@@ -471,7 +471,8 @@
     </hgroup>
     <article>
       <ul class="build fade">
-        <li>Tools: Validator, Color Checker</li>
+        <li>W3C Validator</li>
+        <!-- color checker -->
         <li>Keyboard Testing</li>
         <li>Screenreader Testing</li>
       </ul>
@@ -482,8 +483,7 @@
     <aside class="note">
       <section>
         Using the W3C is still useful. Not to put a "W3C Validated" badge on your site, but to look for actual problems.<br>
-        Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
-        And usually those issues don't have a visual effect, but can badly mess with screenreaders.
+        For example...
       </section>
     </aside>
     <article>
@@ -498,7 +498,8 @@
       <section>
         Find unclosed elements, duplicate ids or invalid nesting is really easy with the validator.<br>
         And usually those issues don't have a visual effect, but can badly mess with screenreaders.<br>
-        To automate validation, you could use grunt-html.
+        <!-- To automate validation, you could use grunt-html. -->
+        We can run this every once in a while, but it won't get us around manual testing...
       </section>
     </aside>
     <article>
@@ -509,7 +510,11 @@
     </article>
   </slide>
 
-  <slide>
+  <!--
+  for now, grunt-html doesn't even support loading html from a url: https://github.com/jzaefferer/grunt-html/issues/9
+  until that is fixed and I've actually tried this myself, its not a good idea to mention it here
+  -->
+  <slide hidden>
     <aside class="note">
       <section>
         grunt-html works with invidiual html files and works on the command line<br>
@@ -534,8 +539,11 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </article>
   </slide>
 
+  <!--
+  exclude for now, since checkmycolours.com has a bunch of issues, especially all the false negatives
+  emailed the author, may include it again when it works better
+  -->
   <slide class="full nobackground" hidden>
-    <!-- exclude for now, since checkmycolours.com has a bunch of issues, especially all the false negatives -->
     <aside class="note">
       <section>
         For that, using tools like checkmycolours.com can help.<br>
@@ -761,12 +769,15 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       <section>
         This test page has just a few demo elements.<br>
         I'm using the virtual cursor to navigate from one to the other.<br>
-        As before, you can see the keys I'm using in the lower part of the video.<br>
+        In VoiceOver, that's control+option+cursor left/right<br>
         [show video]<br>
         There are other methods of navigation though...
       </section>
     </aside>
     <video src="videos/earthquake-basic-navigation.webm"></video>
+    <footer class="source">
+      <a href="demos/basics.html">live demo</a>
+    </footer>
   </slide>
 
   <slide class="segue">
@@ -787,11 +798,14 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        The same testpage as before, though this time I'm using the [web rotor?]<br>
+        The same testpage as before, though this time I'm using the web item rotor<br>
         [show video]
       </section>
     </aside>
     <video src="videos/earthquake-rotor-navigation.webm"></video>
+    <footer class="source">
+      <a href="demos/basics.html">live demo</a>
+    </footer>
   </slide>
 
   <slide>
@@ -874,11 +888,11 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
     </hgroup>
     <article>
       <textarea class="prettyprint" data-lang="html">
-        <div class="overlay hidden" `aria-live="polite" role="status"`>
+        <div class="overlay hidden" `aria-live="polite"`>
           <img src="../images/ajax-loader.gif" `alt=""`>
           <span class="status hidden"></span>
         </div>
-        <div class="confirmation hidden" `role="status" aria-live="polite" aria-atomic="true"`>
+        <div class="confirmation hidden" `aria-live="polite" aria-atomic="true"`>
           <h2>Thanks for you submission!</h2>
           <span class="status"></span>
         </div>
@@ -896,7 +910,6 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
         We append text to the overlay to have the screenreader read it<br>
         Just showing an element doesn't help<br>
         We also append text to the confirmation. Thanks to aria-atomic, the full text gets read.<br>
-
       </section>
     </aside>
     <hgroup>
@@ -914,10 +927,6 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
             .find( ".status" )`.text(` "We'll send a mail to " + email.val() + "[...]" );
         }, 3500);
       </textarea>
-      <footer class="source">
-        <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-live">WAI-ARIA spec for aria-live</a>,
-        <a href="http://juicystudio.com/article/wai-aria_live-regions_updated.php">Tutorial for using live regions</a>
-      </footer>
     </article>
   </slide>
 
@@ -930,6 +939,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <video src="videos/earthquake-submit-with-live-region.webm"></video>
+    <footer class="source">
+      <a href="demos/basics.html">live demo</a>
+    </footer>
   </slide>
 
   <slide>
@@ -997,6 +1009,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <img src="images/screenshot-jqueryui-menu.png">
+    <footer class="source">
+      <a href="demos/jqueryui-menu.html">live demo</a>
+    </footer>
   </slide>
 
   <slide>
@@ -1037,6 +1052,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
           </li>
         </ul>
       </textarea>
+      <footer class="source">
+        <a href="demos/jqueryui-menu.html">live demo</a>
+      </footer>
     </article>
   </slide>
 
@@ -1051,6 +1069,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <video src="videos/jqueryui-menu.webm"></video>
+    <footer class="source">
+      <a href="demos/jqueryui-menu.html">live demo</a>
+    </footer>
   </slide>
 
   <slide class="full nobackground">
@@ -1060,6 +1081,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <img src="images/screenshot-jqueryui-autocomplete.png">
+    <footer class="source">
+      <a href="demos/jqueryui-autocomplete.html">live demo</a>
+    </footer>
   </slide>
 
   <slide>
@@ -1083,6 +1107,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
           2 results are available, use up and down arrow keys to navigate.
         </span>
       </textarea>
+      <footer class="source">
+        <a href="demos/jqueryui-autocomplete.html">live demo</a>
+      </footer>
     </article>
   </slide>
 
@@ -1097,6 +1124,9 @@ Warning: Task "htmllint:invalid" failed. Use --force to continue.
       </section>
     </aside>
     <video src="videos/jqueryui-autocomplete.webm"></video>
+    <footer class="source">
+      <a href="demos/jqueryui-autocomplete.html">live demo</a>
+    </footer>
   </slide>
 
   <slide class="segue">

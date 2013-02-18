@@ -746,7 +746,7 @@ article.smaller {
           @include transform(translate3d($slide-width-widescreen / 2 + 140, 80px, 0) scale(0.35));
         }
         .note {
-          @include transform(translate3d(300px, $slide-height + 100, 0) scale(1.5));
+          @include transform(translate3d(285px, $slide-height + 65, 0) scale(1.5));
         }
       }
     }
@@ -780,8 +780,8 @@ article.smaller {
     }
 
     .note {
-      width: 109%;
-      height: $slide-height / 2 - 90;
+      width: 112%;
+      height: $slide-height / 2 - 40;
       background: $gray-1;
       padding: 0;
 
