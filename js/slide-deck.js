@@ -377,13 +377,13 @@ SlideDeck.prototype.loadConfig_ = function(config) {
     this.makeBuildLists_();
   }
 
-  if (settings.title) {
-    document.querySelector('[data-config-title]').innerHTML = settings.title;
-  }
+  // if (settings.title) {
+  //   document.querySelector('[data-config-title]').innerHTML = settings.title;
+  // }
 
-  if (settings.subtitle) {
-    document.querySelector('[data-config-subtitle]').innerHTML = settings.subtitle;
-  }
+  // if (settings.subtitle) {
+  //   document.querySelector('[data-config-subtitle]').innerHTML = settings.subtitle;
+  // }
 
   if (this.config_.presenters) {
     var presenters = this.config_.presenters;

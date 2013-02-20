@@ -1361,19 +1361,19 @@ article.smaller q:before, article.smaller q:after {
 
 /* line 959, ../scss/default.scss */
 .title-slide hgroup {
-  top: 200px;
+  margin-top: 160px;
 }
 /* line 962, ../scss/default.scss */
 .title-slide hgroup h1 {
-  font-size: 90px;
+  font-size: 76px;
   line-height: 1.4;
   letter-spacing: -3px;
   color: #515151;
 }
 /* line 969, ../scss/default.scss */
 .title-slide hgroup h2 {
-  font-size: 60px;
-  color: darkgrey;
+  font-size: 72px;
+  line-height: 72px;
   font-weight: inherit;
 }
 /* line 975, ../scss/default.scss */
@@ -1385,6 +1385,33 @@ article.smaller q:before, article.smaller q:after {
 }
 
 /* line 984, ../scss/default.scss */
+.map {
+  background: #A5BFDD;
+}
+
+/* line 988, ../scss/default.scss */
+.img-overlay {
+  border-radius: 5px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  top: 55%;
+  padding: 20px;
+  right: 0;
+  max-width: 43%;
+  margin-right: -5px;
+}
+/* line 997, ../scss/default.scss */
+.img-overlay h2, .img-overlay h3 {
+  color: white;
+}
+
+/* line 1002, ../scss/default.scss */
+cite {
+  display: block;
+  margin-top: 1em;
+}
+
+/* line 1007, ../scss/default.scss */
 body {
   -webkit-transition: -webkit-filter 1s ease-in-out;
   -moz-transition: -webkit-filter 1s ease-in-out;
@@ -1392,36 +1419,36 @@ body {
   transition: -webkit-filter 1s ease-in-out;
 }
 
-/* line 987, ../scss/default.scss */
+/* line 1010, ../scss/default.scss */
 .blur-strong {
   -webkit-filter: blur(21px);
 }
 
-/* line 990, ../scss/default.scss */
+/* line 1013, ../scss/default.scss */
 .blur-medium {
   -webkit-filter: blur(14px);
 }
 
-/* line 993, ../scss/default.scss */
+/* line 1016, ../scss/default.scss */
 .blur-weak {
   -webkit-filter: blur(7px);
 }
 
-/* line 996, ../scss/default.scss */
+/* line 1019, ../scss/default.scss */
 .blur-none {
   -webkit-filter: blur(0px);
 }
 
-/* line 1000, ../scss/default.scss */
+/* line 1023, ../scss/default.scss */
 body.with-notes {
   -webkit-filter: none !important;
 }
 
-/* line 1004, ../scss/default.scss */
+/* line 1027, ../scss/default.scss */
 .quote {
   color: white;
 }
-/* line 1007, ../scss/default.scss */
+/* line 1030, ../scss/default.scss */
 .quote .author {
   font-size: 24px;
   position: absolute;
@@ -1429,17 +1456,17 @@ body.with-notes {
   line-height: 1.4;
 }
 
-/* line 1016, ../scss/default.scss */
+/* line 1039, ../scss/default.scss */
 [data-config-contact] span {
   width: 115px;
   display: inline-block;
 }
 
-/* line 1025, ../scss/default.scss */
+/* line 1048, ../scss/default.scss */
 .overview.popup .note {
   display: none !important;
 }
-/* line 1031, ../scss/default.scss */
+/* line 1054, ../scss/default.scss */
 .overview slides slide {
   display: block;
   cursor: pointer;
@@ -1452,26 +1479,26 @@ body.with-notes {
   background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
   background-color: white;
 }
-/* line 1032, ../scss/default.scss */
+/* line 1055, ../scss/default.scss */
 .overview slides slide.backdrop {
   display: none !important;
 }
-/* line 1047, ../scss/default.scss */
+/* line 1070, ../scss/default.scss */
 .overview slides slide.far-past, .overview slides slide.past, .overview slides slide.next, .overview slides slide.far-next, .overview slides slide.far-past {
   opacity: 0.5;
   display: block;
 }
-/* line 1052, ../scss/default.scss */
+/* line 1075, ../scss/default.scss */
 .overview slides slide.current {
   opacity: 1;
 }
-/* line 1058, ../scss/default.scss */
+/* line 1081, ../scss/default.scss */
 .overview .slide-area {
   display: none;
 }
 
 @media print {
-  /* line 1065, ../scss/default.scss */
+  /* line 1088, ../scss/default.scss */
   slides slide {
     display: block !important;
     position: relative;
@@ -1496,46 +1523,46 @@ body.with-notes {
     opacity: 1 !important;
     color: #555;
   }
-  /* line 1085, ../scss/default.scss */
+  /* line 1108, ../scss/default.scss */
   slides slide.far-past, slides slide.past, slides slide.next, slides slide.far-next, slides slide.far-past, slides slide.current {
     opacity: 1 !important;
     display: block !important;
   }
-  /* line 1091, ../scss/default.scss */
+  /* line 1114, ../scss/default.scss */
   slides slide .build > * {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none;
   }
-  /* line 1096, ../scss/default.scss */
+  /* line 1119, ../scss/default.scss */
   slides slide .build .to-build,
   slides slide .build .build-fade {
     opacity: 1;
   }
-  /* line 1101, ../scss/default.scss */
+  /* line 1124, ../scss/default.scss */
   slides slide .auto-fadein {
     opacity: 1 !important;
   }
-  /* line 1105, ../scss/default.scss */
+  /* line 1128, ../scss/default.scss */
   slides slide.backdrop {
     display: none !important;
   }
-  /* line 1109, ../scss/default.scss */
+  /* line 1132, ../scss/default.scss */
   slides slide table.rows {
     border-right: 0;
   }
-  /* line 1114, ../scss/default.scss */
+  /* line 1137, ../scss/default.scss */
   slides slide[hidden] {
     display: none !important;
   }
 
-  /* line 1119, ../scss/default.scss */
+  /* line 1142, ../scss/default.scss */
   .slide-area {
     display: none;
   }
 
-  /* line 1123, ../scss/default.scss */
+  /* line 1146, ../scss/default.scss */
   .reflect {
     -webkit-box-reflect: none;
     -moz-box-reflect: none;
@@ -1544,7 +1571,7 @@ body.with-notes {
     box-reflect: none;
   }
 
-  /* line 1131, ../scss/default.scss */
+  /* line 1154, ../scss/default.scss */
   pre, code {
     font-family: monospace !important;
   }
