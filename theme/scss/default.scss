@@ -957,18 +957,18 @@ article.smaller {
 .title-slide {
 
   hgroup {
-    top: 200px;
+    margin-top: 160px;
 
     h1 {
-      font-size: 90px;
+      font-size: 76px;
       line-height: 1.4;
       letter-spacing: -3px;
       color: $gray-4;
     }
 
     h2 {
-      font-size: 60px;
-      color: $gray-2;
+      font-size: 72px;
+      line-height: 72px;
       font-weight: inherit;
     }
 
@@ -979,6 +979,29 @@ article.smaller {
       margin-top: 2em;
     }
   }
+}
+
+.map {
+  background: #A5BFDD;
+}
+
+.img-overlay {
+  border-radius: 5px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  top: 55%;
+  padding: 20px;
+  right: 0;
+  max-width: 43%;
+  margin-right: -5px;
+  h2, h3 {
+    color: white;
+  }
+}
+
+cite {
+  display: block;
+  margin-top: 1em;
 }
 
 body {
