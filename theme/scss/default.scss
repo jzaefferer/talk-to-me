@@ -608,11 +608,11 @@ video {
 .full .source {
   bottom: 0;
 }
-.full .source a {
+.full .source a, .dark .source a {
   color: rgb(184, 208, 238);
 }
-.full .source a:hover {
-  color: white !importantf;
+.full .source a:hover, .dark .source a:hover {
+  color: white !important;
 }
 
 /* Size variants */
