@@ -9,7 +9,7 @@ $font-size-base: 30px;
 
 $gray-1: #e6e6e6;
 $gray-2: #a9a9a9;
-$gray-3: #797979;
+$gray-3: #494949;
 $gray-4: #515151;
 
 $brand-blue: rgb(67, 135, 253);
@@ -608,11 +608,11 @@ video {
 .full .source {
   bottom: 0;
 }
-.full .source a {
+.full .source a, .dark .source a {
   color: rgb(184, 208, 238);
 }
-.full .source a:hover {
-  color: white !importantf;
+.full .source a:hover, .dark .source a:hover {
+  color: white !important;
 }
 
 /* Size variants */

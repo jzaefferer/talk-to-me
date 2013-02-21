@@ -278,7 +278,7 @@ slides > slide {
   display: none;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 30px;
-  color: #797979;
+  color: #494949;
   width: 900px;
   height: 700px;
   margin-left: -450px;
@@ -503,7 +503,7 @@ h3 {
   letter-spacing: -1px;
   line-height: 2;
   font-weight: inherit;
-  color: #797979;
+  color: #494949;
 }
 
 /* line 354, ../scss/default.scss */
@@ -729,7 +729,7 @@ button:not(:disabled):active {
 
 /* line 517, ../scss/default.scss */
 .gray3 {
-  color: #797979;
+  color: #494949;
 }
 
 /* line 520, ../scss/default.scss */
@@ -762,7 +762,7 @@ table {
   border-collapse: -moz-initial;
   border-collapse: initial;
   border-spacing: 2px;
-  border-bottom: 1px solid #797979;
+  border-bottom: 1px solid #494949;
 }
 /* line 542, ../scss/default.scss */
 table tr > td:first-child, table th {
@@ -809,7 +809,7 @@ table td.highlight {
 /* line 571, ../scss/default.scss */
 table.rows {
   border-bottom: none;
-  border-right: 1px solid #797979;
+  border-right: 1px solid #494949;
 }
 
 /* line 577, ../scss/default.scss */
@@ -868,13 +868,13 @@ video {
 }
 
 /* line 611, ../scss/default.scss */
-.full .source a {
+.full .source a, .dark .source a {
   color: #b8d0ee;
 }
 
 /* line 614, ../scss/default.scss */
-.full .source a:hover {
-  color: white !importantf;
+.full .source a:hover, .dark .source a:hover {
+  color: white !important;
 }
 
 /* Size variants */
@@ -953,7 +953,7 @@ article.smaller q:before, article.smaller q:after {
 /* line 686, ../scss/default.scss */
 .prettyprint .com {
   /* a comment */
-  color: #797979;
+  color: #494949;
   font-style: italic;
 }
 
@@ -1041,9 +1041,9 @@ article.smaller q:before, article.smaller q:after {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px #797979;
-  -moz-box-shadow: 0 0 10px #797979;
-  box-shadow: 0 0 10px #797979;
+  -webkit-box-shadow: 0 0 10px #494949;
+  -moz-box-shadow: 0 0 10px #494949;
+  box-shadow: 0 0 10px #494949;
   width: 60%;
   padding: 2em;
 }
@@ -1088,9 +1088,9 @@ article.smaller q:before, article.smaller q:after {
   -ms-transform: scale(0.6) translate3d(0.5em, 0.5em, 0);
   -o-transform: scale(0.6) translate3d(0.5em, 0.5em, 0);
   transform: scale(0.6) translate3d(0.5em, 0.5em, 0);
-  -webkit-box-shadow: 0 0 10px #797979;
-  -moz-box-shadow: 0 0 10px #797979;
-  box-shadow: 0 0 10px #797979;
+  -webkit-box-shadow: 0 0 10px #494949;
+  -moz-box-shadow: 0 0 10px #494949;
+  box-shadow: 0 0 10px #494949;
 }
 /* line 766, ../scss/default.scss */
 .with-notes.popup slide.backdrop {
@@ -1119,9 +1119,9 @@ article.smaller q:before, article.smaller q:after {
   height: 310px;
   background: #e6e6e6;
   padding: 0;
-  -webkit-box-shadow: 0 0 10px #797979;
-  -moz-box-shadow: 0 0 10px #797979;
-  box-shadow: 0 0 10px #797979;
+  -webkit-box-shadow: 0 0 10px #494949;
+  -moz-box-shadow: 0 0 10px #494949;
+  box-shadow: 0 0 10px #494949;
   -webkit-transform: translate3d(250px, 800px, 0) scale(1.5);
   -moz-transform: translate3d(250px, 800px, 0) scale(1.5);
   -ms-transform: translate3d(250px, 800px, 0) scale(1.5);
@@ -1379,7 +1379,7 @@ article.smaller q:before, article.smaller q:after {
 /* line 975, ../scss/default.scss */
 .title-slide hgroup p {
   font-size: 43px;
-  color: #797979;
+  color: #494949;
   line-height: 1.3;
   margin-top: 2em;
 }
