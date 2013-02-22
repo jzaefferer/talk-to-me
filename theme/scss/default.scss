@@ -575,8 +575,8 @@ table {
 }
 
 q {
-  font-size: 45px;
-  line-height: 72px;
+  font-size: 41px;
+  line-height: 62px;
 
   &:before {
     content: '“';
@@ -898,7 +898,7 @@ article.smaller {
   padding: $slide-left-right-padding $slide-left-right-padding * 2;
 
   h2 {
-    font-size: 60px;
+    font-size: 56px;
     line-height: 50px;
   }
   h3 {
@@ -986,13 +986,14 @@ article.smaller {
 }
 
 .img-overlay {
+  text-align: justify;
+  @include box-sizing(border-box);
   border-radius: 5px;
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
   top: 55%;
   padding: 20px;
   right: 0;
-  max-width: 43%;
   margin-right: -5px;
   h2, h3 {
     color: white;

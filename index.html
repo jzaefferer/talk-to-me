@@ -17,7 +17,8 @@
   <slide class="title-slide segue nobackground">
     <aside class="note">
       <section>
-        Hello. My name is Jörn Zaefferer. I want to tell you...
+        Hello. My name is Jörn Zaefferer.<br>
+        I'd like to tell you about making websites accessible.
       </section>
     </aside>
     <hgroup>
@@ -29,7 +30,7 @@
     </hgroup>
   </slide>
 
-  <slide class="title-slide segue nobackground">
+  <slide class="title-slide segue nobackground" hidden>
     <aside class="note">
       <section>
         How not to be an asshole and make your site cooler than Star Trek
@@ -44,14 +45,14 @@
   <slide class="full nobackground">
     <aside class="note">
       <section>
-        Let me introduce you to Giesbert<br>
+        Let me introduce you to Giesbert.<br>
         In September 1996, Giesbert went to work, crossed a street and was hit by a car, driven by a drunken driver. Giesbert survived, but his spinal cord was severely injured. Afterwards, all he could move was his head. He eventually recovered to continue to work as a designer, from home, using a head pointer and onscreen keyboard. This is Giesbert:
       </section>
     </aside>
     <img src="images/carcrash.jpg" style="width:100%">
     <!-- http://commons.wikimedia.org/wiki/File:Car_crash_outside_the_Europa_Stadium_in_Praga,_Warsaw,_Poland.jpg -->
-    <hgroup class="img-overlay" style="top:0;width:100%">
-      <h2>September 1996: Giesbert (20) sustains heavy spinal cord injury in car crash, caused by drunken driver</h2>
+    <hgroup class="img-overlay" style="top:0;width:101%">
+      <h2>September 1996: Giesbert (20) sustains a heavy spinal cord injury in car crash, caused by drunken driver</h2>
     </hgroup>
   </slide>
 
@@ -78,7 +79,7 @@
       </section>
     </aside>
     <img src="images/map-usa.png">
-    <hgroup class="img-overlay">
+    <hgroup class="img-overlay" style="width:507px;">
       <h2>42.7 million blind,<br>272.4 million low vision people worldwide</h2>
     </hgroup>
   </slide>
@@ -249,7 +250,7 @@
         There are laws to consider, these apply specifically when working on government sites.
       </section>
     </aside>
-    <hgroup>
+    <hgroup style="margin-top:60px">
       <h2>5. It's the Law.</h2>
       <!-- <h3>Applies to government sites.</h3> -->
       <h3><b>USA</b>: <a href="http://en.wikipedia.org/wiki/Section_508_Amendment_to_the_Rehabilitation_Act_of_1973">Section 508</a>, Amendment to the Rehabilitation Act of 1973; <b>Germany</b>: Grundgesetz, Artikel 3, "Niemand darf wegen seiner Behinderung benachteiligt werden.", <a href="http://www.gesetze-im-internet.de/bgg/BJNR146800002.html">Behinderten-Gleichstellungs-Gesetz (BGG)</a> and <a href="http://www.gesetze-im-internet.de/bitv_2_0/BJNR184300011.html">Barrierefreie-Informationstechnik-Verordnung (BITV)</a>; <b>Austria</b>: <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20004228">Bundes-Behinderten-Gleichstellungsgesetz (BGStG)</a> and <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20003230">E-Government-Gesetz (E-GovG)</a>; <b>United Kingdom</b>: <a href="http://shop.bsigroup.com/en/ProductDetail/?pid=000000000030180388">BS 8878, Web accessibility. Code of practice</a>; and many more...
@@ -695,7 +696,7 @@
         setTimeout(function() {
           form.removeClass( "submitted" ).addClass( "confirmed" );
           form.find( ".confirmation")`.removeClass( "hidden" )`
-            .find( ".status" )`.text( "We'll send a mail to " + email.val() + "[...]" )`;
+            .find( ".status" )`.text( "We'll [...]" + email.val() + "[...]" )`;
         }, 3500);
       </textarea>
     </article>
@@ -871,7 +872,7 @@
       <textarea class="prettyprint" data-lang="html">
         <label for="tags">Tags: </label>
         <input id="tags" class="ui-autocomplete-input" autocomplete="off">
-        <span `role="status" aria-live="polite" class="ui-helper-hidden-accessible"`>
+        <span `role="status" aria-live="polite" class="ui-hidden"`>
           2 results are available, use up and down arrow keys to navigate.
         </span>
       </textarea>
@@ -910,7 +911,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Future of ARIA and jQuery UI</h2>
+      <h2>Future of ARIA and jQuery&nbsp;UI</h2>
       <h3>more coverage and alignment</h3>
     </hgroup>
   </slide>
@@ -940,7 +941,7 @@
       </section>
     </aside>
     <hgroup>
-      <h2>Ask for forgiveness, not permission</h2>
+      <h2>Ask for forgiveness, not&nbsp;permission</h2>
       <h3>Convince the boss. Test keyboard and screenreader. Fix by hand or use frameworks.</h3>
     </hgroup>
   </slide>
@@ -966,7 +967,7 @@
     </aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Technology is good.</h2>
-      <p>Resource links at <a href="https://github.com/jzaefferer/talk-to-me">https://github.com/jzaefferer/talk-to-me</a></p>
+      <p>Resource links: <a href="https://github.com/jzaefferer/talk-to-me">https://github.com/jzaefferer/talk-to-me</a></p>
       <p>Slides at <a href="http://jzaefferer.github.com/talk-to-me/">http://jzaefferer.github.com/talk-to-me/</a></p>
     </article>
     <p class="auto-fadein" data-config-contact><!-- populated from slide_config.json --></p>
