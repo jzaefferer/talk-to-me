@@ -17,12 +17,12 @@ Here are additional resources that should be useful when learning, testing and i
 * [A longer video intro to using screen magnifiers](http://www.yuiblog.com/blog/2007/06/12/video-intro-to-screen-magnifiers/)
 * [Understanding how screenreaders work](https://www.ssbbartgroup.com/blog/2013/01/02/how-browsers-interact-with-screen-readers-and-where-aria-fits-in-the-mix/)
 * [Demographics of disabilities](http://en.wikipedia.org/wiki/Disability#Demographics)
+* [NoCoffee Chrome extension to simulate vision problems](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl)
 
 ### Standards
 
 * [W3C Web Content Accessibility Guidelines (WCAG)](http://www.w3.org/WAI/intro/wcag)
 * [WAI-ARIA](http://www.w3.org/WAI/intro/aria.php)
-* [NoCoffee Chrome extension to simulate vision problems](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl/related)
 
 ### Validation
 
