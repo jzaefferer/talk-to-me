@@ -7,7 +7,33 @@ This conference talk is about web accessibility. Look out for a session near you
 
 Here are additional resources that should be useful when learning, testing and implementing accessbility.
 
-* tbd
+### General
+
+* [Slides on Using WAI-ARIA](http://ramoncorominas.com/spainjs/using-wai-aria_ramon-corominas.pdf)
+* [Slides on cheap accessibility](http://www.slideshare.net/sloandr/online-learning-resource-accessibility-in-a-lunchtime)
+* [Twitter feed to accessibility resources](https://twitter.com/newtoa11y)
+* [A brief history of browser accessibility support](http://html5accessibility.com/browser-acc.html)
+* [A longer video intro to using screen readers](http://www.yuiblog.com/blog/2007/05/14/video-intro-to-screenreaders/)
+* [A longer video intro to using screen magnifiers](http://www.yuiblog.com/blog/2007/06/12/video-intro-to-screen-magnifiers/)
+* [Understanding how screenreaders work](https://www.ssbbartgroup.com/blog/2013/01/02/how-browsers-interact-with-screen-readers-and-where-aria-fits-in-the-mix/)
+* [Demographics of disabilities](http://en.wikipedia.org/wiki/Disability#Demographics)
+
+### Standards
+
+* [W3C Web Content Accessibility Guidelines (WCAG)](http://www.w3.org/WAI/intro/wcag)
+* [WAI-ARIA](http://www.w3.org/WAI/intro/aria.php)
+* [NoCoffee Chrome extension to simulate vision problems](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl/related)
+
+### Validation
+
+* [W3C Validator](http://validator.w3.org/)
+* [Grunt task for validating html](https://github.com/jzaefferer/grunt-html)
+
+### VoiceOver essentials
+
+* [Apple's Guide to VoiceOver](http://www.apple.com/voiceover/info/guide/)
+* [VoiceOver keyboard bindings (Snow Leopard)](http://images.apple.com/accessibility/voiceover/pdf/VoiceOver_SnowLeopard_Keyboard_Color.pdf)
+* [VoiceOver keyboard bindings (Mountain Lion)](http://support.apple.com/kb/HT5424?viewlocale=en_US&locale=en_US)
 
 ## Usage
 
