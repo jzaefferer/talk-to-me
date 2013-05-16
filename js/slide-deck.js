@@ -291,6 +291,7 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
     case 50:
     case 51:
     case 52:
+    case 53:
       // don't mess with browser shortcuts for changing tabs
       if (e.metaKey) {
         return;
@@ -300,13 +301,15 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
         1: "blur-none",
         2: "blur-weak",
         3: "blur-medium",
-        4: "blur-strong"
+        4: "blur-strong",
+        5: "blur-black"
       };
       var classList = document.body.classList;
       classList.remove("blur-none");
       classList.remove("blur-weak");
       classList.remove("blur-medium");
       classList.remove("blur-strong");
+      classList.remove("blur-black");
       classList.add( strengths[ strength ] );
       break;
   }
