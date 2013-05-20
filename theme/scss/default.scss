@@ -1008,6 +1008,9 @@ cite {
 body {
   @include transition(-webkit-filter 1s ease-in-out);
 }
+.blur-black {
+  -webkit-filter: blur(500px);
+}
 .blur-strong {
   -webkit-filter: blur(21px);
 }
