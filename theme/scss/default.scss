@@ -1009,7 +1009,7 @@ body {
   @include transition(-webkit-filter 1s ease-in-out);
 }
 .blur-black {
-  -webkit-filter: blur(500px);
+  -webkit-filter: blur(50px);
 }
 .blur-strong {
   -webkit-filter: blur(21px);
