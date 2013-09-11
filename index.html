@@ -277,7 +277,7 @@
     <hgroup style="margin-top:60px">
       <h2>5. It's the Law.</h2>
       <!-- <h3>Applies to government sites.</h3> -->
-      <h3><b>USA</b>: <a href="http://en.wikipedia.org/wiki/Section_508_Amendment_to_the_Rehabilitation_Act_of_1973">Section 508</a>, Amendment to the Rehabilitation Act of 1973; <b>Canada</b>: Common Look and Feel Standards 2.0, <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601&amp;section=text#cha1">Standard on Web Accessibility</a>; <b>United Kingdom</b>: <a href="http://shop.bsigroup.com/en/ProductDetail/?pid=000000000030180388">BS 8878, Web accessibility. Code of practice</a>; <b>Germany</b>: Grundgesetz, Artikel 3, "Niemand darf wegen seiner Behinderung benachteiligt werden.", <a href="http://www.gesetze-im-internet.de/bgg/BJNR146800002.html">Behinderten-Gleichstellungs-Gesetz (BGG)</a> and <a href="http://www.gesetze-im-internet.de/bitv_2_0/BJNR184300011.html">Barrierefreie-Informationstechnik-Verordnung (BITV)</a>; and many more...
+      <h3><b>USA</b>: <a href="http://en.wikipedia.org/wiki/Section_508_Amendment_to_the_Rehabilitation_Act_of_1973">Section 508</a>, Amendment to the Rehabilitation Act of 1973; <b>Canada</b>: Common Look and Feel Standards 2.0, <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601&amp;section=text#cha1">Standard on Web Accessibility</a>, <a href="http://www.e-laws.gov.on.ca/html/statutes/english/elaws_statutes_05a11_e.htm">Accessibility for Ontarians with Disabilities Act</a>, affects large (2014) and small (2015) private organizations; <b>United Kingdom</b>: <a href="http://shop.bsigroup.com/en/ProductDetail/?pid=000000000030180388">BS 8878, Web accessibility. Code of practice</a>; <b>Germany</b>: Grundgesetz, Artikel 3, "Niemand darf wegen seiner Behinderung benachteiligt werden.", <a href="http://www.gesetze-im-internet.de/bgg/BJNR146800002.html">Behinderten-Gleichstellungs-Gesetz (BGG)</a> and <a href="http://www.gesetze-im-internet.de/bitv_2_0/BJNR184300011.html">Barrierefreie-Informationstechnik-Verordnung (BITV)</a>; and many more...
       <!-- <b>Austria</b>: <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20004228">Bundes-Behinderten-Gleichstellungsgesetz (BGStG)</a> and <a href="http://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20003230">E-Government-Gesetz (E-GovG)</a>;  -->
       </h3>
     </hgroup>
@@ -684,7 +684,7 @@
         [show video]<br>
         Page has no links<br>
         Navigate by landmarks, headers and form controls.<br>
-        What's landmarks?
+        How do you use landmarks then?
       </section>
     </aside>
     <video src="videos/earthquake-rotor-navigation.webm"></video>
@@ -696,11 +696,11 @@
   <slide>
     <aside class="note">
       <section>
-        For landmarks, we use the role attribute.<br>
-        Value depends on the purpose of that element.<br>
+        Landmarks: role attribute.<br>
+        Value: depends on purpose of element.<br>
         [activate highlight]<br>
-        Example uses banner, main, complementary, search and contentinfo.<br>
-        Let's listen to what happens when we submit that form...
+        Example: banner, main, complementary, search and contentinfo.<br>
+        [pause] Let's listen to what happens when we submit that form...
       </section>
     </aside>
     <hgroup>
@@ -741,9 +741,9 @@
     <aside class="note">
       <section>
         Make overlay and confirmation elements live regions<br>
-        ADd the aria-live attribute.<br>
-        Polite: let screenreader finish reading current element, then announce the live region.<br>
-        aria-atomic: tells screenreader to read all the text, not just changed text<br>
+        Add the aria-live attribute.<br>
+        Polite: let screenreader finish, then announce the live region.<br>
+        aria-atomic: read all text, not only what changed<br>
         The JavaScript for this...
       </section>
     </aside>
